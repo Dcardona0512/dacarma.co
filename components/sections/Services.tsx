@@ -2,7 +2,6 @@ import Image from "next/image";
 import { site } from "@/content/site";
 import { Heading } from "@/components/ui/Heading";
 import { ButtonLink } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
 
 export function Services() {
   const { services } = site;
@@ -12,31 +11,26 @@ export function Services() {
       id="services"
       className="relative z-[1] flex w-full items-center justify-center gap-16 rounded-[48px] bg-surface p-12 max-tab:px-8 max-desk:flex-col"
     >
-      {/* On narrow screens the visual moves above the copy. */}
+      {/* No entrance animation here — the original leaves this section and the
+          footer static, so they are simply present as you scroll in. */}
       <div className="flex flex-1 flex-col items-start justify-center gap-8 max-desk:order-2 max-desk:w-full">
-        <Reveal className="w-full">
-          <Heading segments={services.heading} />
-        </Reveal>
+        <Heading segments={services.heading} />
 
-        <Reveal className="w-full" delay={0.1}>
-          <div className="flex w-full flex-col justify-center gap-4">
-            <div className="flex items-center justify-start gap-2.5">
-              <p className="t-lead">{services.lead}</p>
-              <span className="flex shrink-0 items-center justify-center rounded-full bg-[rgba(255,255,255,0.02)] px-2 py-1">
-                <span className="t-badge">{services.priceBadge}</span>
-              </span>
-            </div>
-            <p className="t-body-sm">{services.body}</p>
+        <div className="flex w-full flex-col justify-center gap-4">
+          <div className="flex items-center justify-start gap-2.5">
+            <p className="t-lead">{services.lead}</p>
+            <span className="flex shrink-0 items-center justify-center rounded-full bg-[rgba(255,255,255,0.02)] px-2 py-1">
+              <span className="t-badge">{services.priceBadge}</span>
+            </span>
           </div>
-        </Reveal>
+          <p className="t-body-sm">{services.body}</p>
+        </div>
 
-        <Reveal className="w-full" delay={0.2}>
-          <ButtonLink
-            href={services.cta.href}
-            label={services.cta.label}
-            fullWidth
-          />
-        </Reveal>
+        <ButtonLink
+          href={services.cta.href}
+          label={services.cta.label}
+          fullWidth
+        />
       </div>
 
       <div className="mask-fade-b z-[5] shrink-0 max-desk:order-1">

@@ -1,17 +1,13 @@
 import { site } from "@/content/site";
 import { SocialIconLink } from "@/components/ui/SocialIconLink";
 import { LocalClock } from "@/components/LocalClock";
-import { Reveal } from "@/components/ui/Reveal";
 
 export function SiteFooter() {
   const { footer, profile } = site;
 
   return (
     <>
-      <Reveal
-        as="footer"
-        className="flex w-full max-w-[900px] flex-col items-center justify-center gap-4 px-16 pt-8 max-tab:px-0"
-      >
+      <footer className="flex w-full max-w-[900px] flex-col items-center justify-center gap-4 px-16 pt-8 max-tab:px-0">
         <div className="flex w-min flex-col items-center justify-center gap-4">
           <p className="t-logo whitespace-nowrap">{profile.logo}</p>
 
@@ -28,7 +24,7 @@ export function SiteFooter() {
             ))}
           </div>
         </div>
-      </Reveal>
+      </footer>
 
       <div className="flex w-full max-w-[800px] flex-col items-center justify-center p-6">
         <div className="flex items-center gap-2">

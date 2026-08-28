@@ -12,18 +12,21 @@ function ProjectCard({ project }: { project: Project }) {
       rel="noopener noreferrer"
       className="group relative flex aspect-[524/394] w-full flex-col justify-end overflow-hidden rounded-[48px] bg-surface p-8"
     >
-      <Image
-        src={project.image}
-        alt={`${project.title} — ${project.description}`}
-        fill
-        sizes="(min-width: 1200px) 524px, 100vw"
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-      />
-
-      {/* Diagonal sheen that sweeps across on hover. */}
-      <span className="pointer-events-none absolute inset-0 z-[1] overflow-hidden rounded-[48px]">
-        <span className="absolute top-0 -left-1/3 h-[200%] w-1/3 -translate-y-1/4 bg-[linear-gradient(270deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0)_100%)] opacity-0 group-hover:opacity-100 group-hover:[animation:sheen_900ms_ease-out]" />
+      {/* The artwork dissolves into the card's own background between 50% and
+          83.6% of its height. That fade — not a baked-in gradient — is what
+          gives the title and description something dark to sit on. */}
+      <span className="pointer-events-none absolute inset-0 [mask-image:linear-gradient(#000_50%,transparent_83.5916%)]">
+        <Image
+          src={project.image}
+          alt={`${project.title} — ${project.description}`}
+          fill
+          sizes="(min-width: 1200px) 524px, 100vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
       </span>
+
+      {/* Hairline border, itself fading out toward the bottom. */}
+      <span className="pointer-events-none absolute inset-0 z-[1] rounded-[48px] border border-[var(--hairline)] [mask-image:linear-gradient(#000_0%,rgba(0,0,0,0.16)_82.8442%)]" />
 
       <div className="relative z-[2] flex w-full flex-col justify-center gap-2">
         <div className="flex w-full items-center justify-start gap-3">
@@ -42,7 +45,6 @@ export function Work() {
   return (
     <Reveal
       as="section"
-      distance={240}
       id="work"
       className="grid w-full max-w-[1200px] scroll-mt-16 grid-cols-1 justify-center gap-6 desk:grid-cols-2"
     >

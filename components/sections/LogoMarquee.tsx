@@ -16,7 +16,12 @@ export function LogoMarquee() {
         {site.marquee.eyebrow}
       </p>
 
-      <div className="relative h-[55px] w-full max-w-[700px] overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,#000_25%,#000_75%,transparent_100%)]">
+      {/* The ticker fades in on its own, on top of the section's 40px rise. */}
+      <Reveal
+        distance={0}
+        delay={0.15}
+        className="relative h-[55px] w-full max-w-[700px] overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,#000_25%,#000_75%,transparent_100%)]"
+      >
         <ul
           className="absolute top-0 left-0 flex h-full w-max items-center will-change-transform"
           style={{ animation: "marquee 26s linear infinite" }}
@@ -42,7 +47,7 @@ export function LogoMarquee() {
             </li>
           ))}
         </ul>
-      </div>
+      </Reveal>
     </Reveal>
   );
 }
