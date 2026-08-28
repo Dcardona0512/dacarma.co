@@ -10,6 +10,7 @@ export function LogoMarquee() {
   return (
     <Reveal
       as="section"
+      delay={0.5}
       className="flex w-full flex-col items-center justify-center gap-4 rounded-[48px] p-6"
     >
       <p className="t-eyebrow max-w-[277px] text-center">
@@ -19,7 +20,7 @@ export function LogoMarquee() {
       {/* The ticker fades in on its own, on top of the section's 40px rise. */}
       <Reveal
         distance={0}
-        delay={0.15}
+        delay={0.6}
         className="relative h-[55px] w-full max-w-[700px] overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,#000_25%,#000_75%,transparent_100%)]"
       >
         <ul

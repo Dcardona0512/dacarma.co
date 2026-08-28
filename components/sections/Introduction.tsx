@@ -16,7 +16,10 @@ export function Introduction() {
     >
       {/* Left card spans two of the three columns. */}
       <div className="flex flex-col justify-center gap-8 overflow-hidden rounded-[48px] bg-surface p-12 desk:col-span-2">
-        <Reveal className="flex w-full flex-row items-center justify-between max-tab:flex-col max-tab:items-start max-tab:gap-6">
+        <Reveal
+          delay={0.1}
+          className="flex w-full flex-row items-center justify-between max-tab:flex-col max-tab:items-start max-tab:gap-6"
+        >
           <div className="flex items-center gap-2">
             <Image
               src={profile.avatar}
@@ -40,10 +43,10 @@ export function Introduction() {
         </Reveal>
 
         <div className="flex flex-col items-start justify-center gap-6">
-          <Reveal className="w-full" delay={0.1}>
+          <Reveal className="w-full" delay={0.2}>
             <Heading segments={hero.heading} />
           </Reveal>
-          <Reveal className="w-full" delay={0.2}>
+          <Reveal className="w-full" delay={0.3}>
             <p className="t-body">{hero.body}</p>
           </Reveal>
         </div>

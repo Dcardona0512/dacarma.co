@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { StarfieldCanvas } from "./StarfieldCanvas";
 import { ShootingStars } from "./ShootingStars";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, SOFT_SPRING } from "@/components/ui/Reveal";
 import { site } from "@/content/site";
 
 // The hero's right-hand card: a night sky built from four stacked layers,
@@ -16,6 +16,8 @@ export function HeroVisual() {
           in on load without travelling, matching the original. */}
       <Reveal
         distance={0}
+        delay={0.2}
+        spring={SOFT_SPRING}
         className="absolute -top-[335px] -right-[51px] z-[1] blur-[64px]"
       >
         <div style={{ animation: "beam-drift 14s ease-in-out infinite" }}>
@@ -42,6 +44,7 @@ export function HeroVisual() {
           reads as the page "settling" on load. */}
       <Reveal
         distance={240}
+        delay={0.5}
         className="mask-fade-b absolute bottom-[-54px] left-0 z-10"
       >
         <Image

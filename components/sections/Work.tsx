@@ -15,13 +15,13 @@ function ProjectCard({ project }: { project: Project }) {
       {/* The artwork dissolves into the card's own background between 50% and
           83.6% of its height. That fade — not a baked-in gradient — is what
           gives the title and description something dark to sit on. */}
-      <span className="pointer-events-none absolute inset-0 [mask-image:linear-gradient(#000_50%,transparent_83.5916%)]">
+      <span className="pointer-events-none absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.07] [mask-image:linear-gradient(#000_50%,transparent_83.5916%)]">
         <Image
           src={project.image}
           alt={`${project.title} — ${project.description}`}
           fill
           sizes="(min-width: 1200px) 524px, 100vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          className="object-cover"
         />
       </span>
 
@@ -31,8 +31,10 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="relative z-[2] flex w-full flex-col justify-center gap-2">
         <div className="flex w-full items-center justify-start gap-3">
           <p className="t-card-title whitespace-pre">{project.title}</p>
-          <span className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--chip)] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-            <ArrowUpRightIcon className="size-3.5 text-offwhite" />
+          {/* Hidden until hover — that reveal, plus the 1.07 image push, is
+              the card's entire hover treatment. */}
+          <span className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--chip)] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <ArrowUpRightIcon className="size-4 text-offwhite" />
           </span>
         </div>
         <p className="t-body-sm">{project.description}</p>
@@ -46,6 +48,7 @@ export function Work() {
     <Reveal
       as="section"
       id="work"
+      delay={0.7}
       className="grid w-full max-w-[1200px] scroll-mt-16 grid-cols-1 justify-center gap-6 desk:grid-cols-2"
     >
       {site.work.map((project) => (

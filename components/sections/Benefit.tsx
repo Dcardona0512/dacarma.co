@@ -13,9 +13,10 @@ export function Benefit() {
     <Reveal
       as="section"
       id="benefit"
+      delay={0.6}
       className="flex w-full items-center justify-center gap-16 overflow-hidden rounded-[48px] bg-surface p-12 max-tab:flex-col max-tab:px-8 max-desk:flex-col"
     >
-      <Reveal distance={240} className="mask-fade-b shrink-0">
+      <Reveal distance={240} delay={0.8} className="mask-fade-b shrink-0">
         <Image
           src={benefit.visual}
           alt=""

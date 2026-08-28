@@ -5,25 +5,35 @@ import type { ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
-  /** Seconds to wait before starting. */
+  /** Seconds to wait after load. Matches the original's stagger. */
   delay?: number;
-  /** Pixels travelled upward. The original used 40 everywhere except the
-   *  work grid, which came up from 240. */
+  /** Pixels travelled upward. Text and sections use 40; images use 240. */
   distance?: number;
+  /** The light beam uses a much heavier, slower spring than everything else. */
+  spring?: Spring;
   className?: string;
   as?: "div" | "section" | "footer";
   id?: string;
 };
 
-// Framer's default "appear" curve. Every entrance on the site runs through
-// here, so retiming the whole page is a one-line change.
-const EASE = [0.44, 0, 0.56, 1] as const;
-const DURATION = 0.8;
+type Spring = { damping: number; stiffness: number; mass: number };
 
+// Lifted verbatim from the original's appear-animation payload.
+const DEFAULT_SPRING: Spring = { damping: 60, stiffness: 320, mass: 1 };
+export const SOFT_SPRING: Spring = { damping: 100, stiffness: 100, mass: 10 };
+
+/**
+ * These are *appear* animations: they run once on page load, staggered by
+ * delay, exactly as the original does. Deliberately not scroll-triggered —
+ * an element that starts translated 240px inside an `overflow: hidden` card
+ * is barely intersecting, so an in-view trigger can fail to fire and strand
+ * the content at opacity 0 forever.
+ */
 export function Reveal({
   children,
   delay = 0,
   distance = 40,
+  spring = DEFAULT_SPRING,
   className,
   as = "div",
   id,
@@ -45,9 +55,8 @@ export function Reveal({
       id={id}
       className={className}
       initial={{ opacity: 0.001, y: distance }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: DURATION, delay, ease: EASE }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", delay, ...spring }}
       style={{ willChange: "transform" }}
     >
       {children}
