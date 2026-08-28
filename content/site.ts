@@ -22,7 +22,7 @@ export type SocialLink = {
 };
 
 export const site = {
-  url: "https://dacarma.dev",
+  url: "https://dacarma.co",
   description:
     "David Cardona Martínez — Commercial Pilot & Full-Stack Software Developer building React and Next.js products.",
 
