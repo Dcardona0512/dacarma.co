@@ -18,7 +18,7 @@ export type Project = {
 export type SocialLink = {
   label: string;
   href: string;
-  icon: "linkedin" | "github" | "x" | "youtube";
+  icon: "linkedin" | "github" | "instagram";
 };
 
 export const site = {
@@ -48,8 +48,21 @@ export const site = {
     cta: { label: "Get In Touch", href: "/contact" },
     portrait: "/images/hero-portrait.png",
     socials: [
-      { label: "LinkedIn", href: "https://twitter.com", icon: "linkedin" },
-      { label: "GitHub", href: "https://youtube.com", icon: "github" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/dacarma/",
+        icon: "linkedin",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Dcardona0512",
+        icon: "github",
+      },
+      {
+        label: "Instagram",
+        href: "https://www.instagram.com/david.cardonam/",
+        icon: "instagram",
+      },
     ] satisfies SocialLink[],
   },
 
@@ -70,7 +83,8 @@ export const site = {
   work: [
     {
       title: "TUMARKET.CO",
-      description: "Online ordering platform for local markets & grocery stores.",
+      description:
+        "Online ordering platform for local markets & grocery stores.",
       image: "/images/work-tumarket.png",
       href: "https://www.tumarket.co/",
     },
@@ -108,8 +122,21 @@ export const site = {
 
   footer: {
     socials: [
-      { label: "X", href: "https://twitter.com", icon: "x" },
-      { label: "YouTube", href: "https://youtube.com", icon: "youtube" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/dacarma/",
+        icon: "linkedin",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Dcardona0512",
+        icon: "github",
+      },
+      {
+        label: "Instagram",
+        href: "https://www.instagram.com/david.cardonam/",
+        icon: "instagram",
+      },
     ] satisfies SocialLink[],
     credit: "Created by David Cardona Martínez",
   },
@@ -118,14 +145,11 @@ export const site = {
     heading: "Let's have a chat!",
     body: "Enter your details below and I'll get back to you as soon as possible.",
     visual: "/images/services-visual.png",
-    budgets: [
-      "Select Budget",
-      "Up to $2,000",
-      "$2,000 - $5,000",
-      "$10,000 +",
-    ],
+    budgets: ["Select Budget", "Up to $2,000", "$2,000 - $5,000", "$10,000 +"],
     submitLabel: "Submit",
-    successMessage: "Thanks — your message is on its way. I'll be in touch soon.",
-    errorMessage: "Something went wrong. Please try again, or email me directly.",
+    successMessage:
+      "Thanks — your message is on its way. I'll be in touch soon.",
+    errorMessage:
+      "Something went wrong. Please try again, or email me directly.",
   },
 } as const;
