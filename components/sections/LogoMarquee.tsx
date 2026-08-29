@@ -1,11 +1,16 @@
 import { site } from "@/content/site";
-import { marqueeLogos } from "@/content/logos";
+import { stack } from "@/content/stack";
 import { Reveal } from "@/components/ui/Reveal";
 
-// The track holds two identical copies of the logo list, so translating it
+// Roughly 28px of track per second — the speed the original marquee ran at.
+// If you add or remove entries, re-derive the duration from this so the
+// scroll keeps the same pace: duration = (width of one copy) / 27.7.
+const MARQUEE_DURATION_S = 80;
+
+// The track holds two identical copies of the list, so translating it
 // by exactly -50% lands back on the starting frame — a seamless loop.
 export function LogoMarquee() {
-  const track = [...marqueeLogos, ...marqueeLogos];
+  const track = [...stack, ...stack];
 
   return (
     <Reveal
@@ -25,28 +30,34 @@ export function LogoMarquee() {
       >
         <ul
           className="absolute top-0 left-0 flex h-full w-max items-center will-change-transform"
-          style={{ animation: "marquee 26s linear infinite" }}
+          style={{ animation: `marquee ${MARQUEE_DURATION_S}s linear infinite` }}
         >
           {/* The 32px spacing is padding rather than a flex gap: that makes one
               copy exactly half the track width, so -50% loops without a jump. */}
-          {track.map((logo, i) => (
-            <li key={i} className="flex shrink-0 items-center pr-8">
-              <svg
-                width={logo.width}
-                height={logo.height}
-                viewBox={logo.viewBox}
-                role="img"
-                aria-label={i < marqueeLogos.length ? logo.name : undefined}
-                aria-hidden={i >= marqueeLogos.length}
-                fill="currentColor"
-                className="text-white"
+          {track.map((item, i) => {
+            const isClone = i >= stack.length;
+            return (
+              <li
+                key={i}
+                className="flex shrink-0 items-center gap-2.5 pr-8 text-white"
+                aria-hidden={isClone || undefined}
               >
-                {logo.paths.map((d, j) => (
-                  <path key={j} d={d} />
-                ))}
-              </svg>
-            </li>
-          ))}
+                <svg
+                  viewBox={item.viewBox}
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="size-5 shrink-0"
+                >
+                  {item.paths.map((d, j) => (
+                    <path key={j} d={d} />
+                  ))}
+                </svg>
+                <span className="text-[18px] leading-none font-medium tracking-[-0.02em] whitespace-nowrap">
+                  {item.label}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </Reveal>
     </Reveal>
