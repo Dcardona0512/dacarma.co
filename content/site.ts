@@ -33,8 +33,8 @@ export const site = {
     logo: "DACARMA",
     avatar: "/images/avatar.png",
     /** Drives the footer clock. */
-    timeZone: "Europe/London",
-    location: "London, United Kingdom",
+    timeZone: "America/Bogota",
+    location: "Santiago de Cali, Colombia",
   },
 
   hero: {
