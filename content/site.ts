@@ -54,7 +54,7 @@ export const site = {
   },
 
   marquee: {
-    eyebrow: "Worked with the best of the best",
+    eyebrow: "The stack I build with",
   },
 
   benefit: {
