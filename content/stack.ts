@@ -1,8 +1,6 @@
 // The marquee's stack. Brand marks come from simple-icons (CC0 1.0); the
 // entries that are concepts rather than products — SQL, accessibility, auth —
 // use Phosphor glyphs (MIT), the same icon family as the rest of the site.
-// ChatGPT uses a generic chat glyph: OpenAI asked simple-icons to drop their
-// mark, so redistributing it here would go against that.
 
 export type StackItem = {
   label: string;
@@ -68,7 +66,7 @@ export const stack: StackItem[] = [
     ],
   },
   {
-    label: "Accesibilidad (WCAG)",
+    label: "WCAG",
     viewBox: "0 0 256 256",
     paths: [
       "M100,36a28,28,0,1,1,28,28A28,28,0,0,1,100,36ZM227.6,92.57A15.7,15.7,0,0,0,212,80H44a16,16,0,0,0-6.7,30.53l.06,0,53.89,23.73-21.92,83.3a16,16,0,0,0,7.9,20.91A15.83,15.83,0,0,0,84,240a16,16,0,0,0,14.44-9.06L128,180l29.58,51a16,16,0,0,0,29.07-13.35l-21.92-83.3,54-23.76A15.7,15.7,0,0,0,227.6,92.57Z",
@@ -114,13 +112,6 @@ export const stack: StackItem[] = [
     viewBox: "0 0 24 24",
     paths: [
       "M21 10.5h3v3h-3v3h-1.5v3H18v-3h-1.5v3H15v-3H9v3H7.5v-3H6v3H4.5v-3H3v-3H0v-3h3v-6h18Zm-15 0h1.5v-3H6Zm10.5 0H18v-3h-1.5z",
-    ],
-  },
-  {
-    label: "ChatGPT",
-    viewBox: "0 0 256 256",
-    paths: [
-      "M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24ZM84,140a12,12,0,1,1,12-12A12,12,0,0,1,84,140Zm44,0a12,12,0,1,1,12-12A12,12,0,0,1,128,140Zm44,0a12,12,0,1,1,12-12A12,12,0,0,1,172,140Z",
     ],
   },
 ];

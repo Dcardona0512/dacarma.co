@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 // Roughly 28px of track per second — the speed the original marquee ran at.
 // If you add or remove entries, re-derive the duration from this so the
 // scroll keeps the same pace: duration = (width of one copy) / 27.7.
-const MARQUEE_DURATION_S = 80;
+const MARQUEE_DURATION_S = 71;
 
 // The track holds two identical copies of the list, so translating it
 // by exactly -50% lands back on the starting frame — a seamless loop.
