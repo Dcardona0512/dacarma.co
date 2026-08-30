@@ -1,95 +1,95 @@
-# Todo lo que usas
+# Everything you use
 
-Inventario completo, sacado leyendo tus tres repos, tu proyecto de Supabase y
-los despliegues. **Nada por memoria ni por suposición.** Si algo no está aquí,
-es porque no aparece en tu código.
+Full inventory, assembled by reading your three repos, your Supabase project and
+the live deployments. **Nothing from memory or assumption.** If something isn't
+here, it doesn't appear anywhere in your code.
 
 ---
 
-## Lenguajes
+## Languages
 
-| | Dónde |
+| | Where |
 |---|---|
-| **TypeScript** | Los tres proyectos, sin excepción. 647 KB en TUMARKET, 536 KB en DCM ACCESS |
-| **JavaScript** | Configuración y scripts |
-| **SQL** | 73 migraciones: tablas, políticas, funciones, triggers |
-| **HTML** | Semántico, en todo el marcado |
-| **CSS** | Tailwind más CSS propio para animaciones y máscaras |
+| **TypeScript** | All three projects, without exception. 647 KB in TUMARKET, 536 KB in DCM ACCESS |
+| **JavaScript** | Config and scripts |
+| **SQL** | 73 migrations: tables, policies, functions, triggers |
+| **HTML** | Semantic, throughout the markup |
+| **CSS** | Tailwind plus hand-written CSS for animations and masks |
 
 ## Frontend
 
-- **React 19** — Server y Client Components
-- **Next.js** — App Router, versiones 15 y 16
-- **Tailwind CSS v4** — con `@theme` y tokens de diseño
-- **Motion** (antes Framer Motion) — animaciones con muelles
-- **SVG escrito a mano** — las gráficas de informes de TUMARKET no usan
-  librería: ejes, escalas, barras apiladas y etiquetas, todo propio
-- **lucide-react** — iconos en DCM ACCESS
-- **clsx** y **tailwind-merge** — composición de clases
-- Diseño **responsive** y **accesibilidad WCAG** (contraste verificado,
+- **React 19** — Server and Client Components
+- **Next.js** — App Router, versions 15 and 16
+- **Tailwind CSS v4** — with `@theme` and design tokens
+- **Motion** (formerly Framer Motion) — spring-based animation
+- **Hand-written SVG** — TUMARKET's report charts use no charting library:
+  axes, scales, stacked bars and labels are all your own
+- **lucide-react** — icons in DCM ACCESS
+- **clsx** and **tailwind-merge** — class composition
+- **Responsive design** and **WCAG accessibility** (verified contrast,
   `prefers-reduced-motion`)
 
-## Backend y datos
+## Backend and data
 
 - **PostgreSQL 17**
-- **Supabase** — Postgres gestionado, y además:
-  - **Auth** con sesiones
-  - **Storage** con políticas por carpeta
-  - **Realtime** para pedidos en vivo
-  - **RPC** — funciones de negocio en la base de datos
-  - **Migraciones** versionadas (73 en TUMARKET)
-  - **Tipos generados** desde el esquema (`database.types.ts`)
-- **Row-Level Security** — activo en las 9 tablas
-- **Multi-tenancy** — aislamiento por tienda con políticas y triggers
-- **Server Actions** de Next.js
-- **API Routes** — webhooks, cron, confirmación de cuenta
-- **Next.js Middleware** — refresco de sesión y protección de rutas
-- **Zod** — validación de entradas en DCM ACCESS
+- **Supabase** — managed Postgres, plus:
+  - **Auth** with sessions
+  - **Storage** with per-folder policies
+  - **Realtime** for live orders
+  - **RPC** — business logic as database functions
+  - **Versioned migrations** (73 in TUMARKET)
+  - **Generated types** from the schema (`database.types.ts`)
+- **Row-Level Security** — enabled on all 9 tables
+- **Multi-tenancy** — per-store isolation through policies and triggers
+- **Next.js Server Actions**
+- **API Routes** — webhooks, cron, account confirmation
+- **Next.js Middleware** — session refresh and route protection
+- **Zod** — input validation in DCM ACCESS
 
-## Autenticación y seguridad
+## Authentication and security
 
-- Supabase Auth: registro y acceso por correo, confirmación
-- **OAuth**: Google, Facebook y Apple
-- Row-Level Security como capa de autorización
-- Rutas reservadas y protegidas
-- Honeypot y validación en servidor en formularios
+- Supabase Auth: email sign-up, sign-in and confirmation
+- **OAuth**: Google, Facebook and Apple
+- Row-Level Security as the authorization layer
+- Reserved and protected routes
+- Honeypot and server-side validation on forms
 
-## Integraciones
+## Integrations
 
-- **MercadoPago** — checkout, webhook, suscripciones con cortesía, vencimiento
-  y planes mensual/anual
-- **Resend** — correo transaccional
-- **ZXing** — lectura de códigos de barras con la cámara
-- Generación de **códigos QR**
-- **Tareas cron** — avisos de vencimiento
+- **MercadoPago** — checkout, webhook, subscriptions with trial period, expiry,
+  monthly and annual plans
+- **Resend** — transactional email
+- **ZXing** — barcode scanning through the camera
+- **QR code** generation
+- **Cron jobs** — expiry notices
 - **Vercel Analytics**
-- **`next/og` ImageResponse** — iconos generados por tienda, con versión en la
-  URL para evitar caché obsoleta
+- **`next/og` ImageResponse** — per-store icons generated on the fly, versioned
+  in the URL to defeat stale caching
 
-## Infraestructura y herramientas
+## Infrastructure and tooling
 
-- **Vercel** — despliegue continuo desde Git, dominios, variables de entorno,
-  protección de despliegues
+- **Vercel** — continuous deployment from Git, custom domains, environment
+  variables, deployment protection
 - **Cloudflare** — DNS
-- **Git** y **GitHub**
-- **ESLint** y **Prettier** (con `prettier-plugin-tailwindcss`)
+- **Git** and **GitHub**
+- **ESLint** and **Prettier** (with `prettier-plugin-tailwindcss`)
 - **Claude Code**
-- **i18n** — enrutado por idioma con segmento `[locale]`
+- **i18n** — locale routing through a `[locale]` segment
 
-## Prácticas
+## Practices
 
-- Migraciones versionadas y reproducibles desde cero
-- Autorización en la base de datos, no en el código de aplicación
-- Tipado estricto de punta a punta, con tipos generados desde el esquema
-- Accesibilidad: contraste WCAG, movimiento reducido, textos alternativos
-- SEO: metadatos, Open Graph, redirección de dominio
+- Versioned migrations, replayable from zero
+- Authorization in the database rather than in application code
+- Strict typing end to end, with types generated from the schema
+- Accessibility: WCAG contrast, reduced motion, real alt text
+- SEO: metadata, Open Graph, domain redirects
 
 ---
 
-## Las 15 de LinkedIn
+## The 15 for LinkedIn
 
-La sección de Aptitudes no debe llevar todo lo de arriba. LinkedIn pondera **las
-tres primeras** y son las que se validan con recomendaciones. En este orden:
+The Skills section shouldn't carry everything above. LinkedIn weights **the
+first three** most, and those are the ones endorsements validate. In this order:
 
 ```
 1. TypeScript          6. Tailwind CSS        11. Database Design
@@ -99,22 +99,22 @@ tres primeras** y son las que se validan con recomendaciones. En este orden:
 5. Supabase           10. Vercel              15. SQL
 ```
 
-## Lo que NO deberías listar
+## What you should NOT list
 
-Lo busqué en los tres repos y no aparece. Si lo pones, te lo van a preguntar:
+I searched all three repos for each of these and found nothing. List them and
+you will be asked about them:
 
-| | Lo que sí usas |
+| Don't claim | What you actually use |
 |---|---|
 | Firebase | Supabase |
-| SASS / preprocesadores | Tailwind CSS v4 |
+| SASS / CSS preprocessors | Tailwind CSS v4 |
 | MySQL | PostgreSQL 17 |
 | Docker | Vercel |
 | AWS | Vercel + Supabase |
-| Testing (Jest, Vitest, Playwright) | No hay tests en ninguno de los tres |
-| GraphQL | REST y Server Actions |
-| Redux / Zustand | Estado de React y Context |
+| Testing (Jest, Vitest, Playwright) | No tests in any of the three |
+| GraphQL | REST and Server Actions |
+| Redux / Zustand | React state and Context |
 
-**Los tests son el hueco más visible de tu perfil.** Un reclutador técnico lo va
-a notar: tres proyectos, cero pruebas automatizadas. No lo listes como
-habilidad, pero considera añadir unas cuantas a TUMARKET — con eso pasa a ser
-algo que sí puedes poner.
+**Tests are the most visible gap in your profile.** A technical recruiter will
+notice: three projects, zero automated tests. Don't list it as a skill — but
+consider adding a few to TUMARKET, and then it becomes something you can.
