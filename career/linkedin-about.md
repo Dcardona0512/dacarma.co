@@ -1,97 +1,92 @@
-# «Acerca de» de LinkedIn — versión definitiva
+# «Acerca de» de LinkedIn
 
 LinkedIn permite 2.600 caracteres y solo muestra **las 3 primeras líneas** antes
-del «…ver más». Por eso este texto abre con una frase que se sostiene sola.
+del «…ver más».
 
-Pega **solo la versión en inglés**. Para el español, LinkedIn tiene un mecanismo
-propio: *Añadir perfil en otro idioma*, arriba a la derecha de tu perfil. Meter
-los dos idiomas en el mismo campo se come el límite y parte la lectura.
+Pega **solo la versión en inglés**. Para el español usa *Añadir perfil en otro
+idioma*, arriba a la derecha de tu perfil.
 
 ---
 
 ## Inglés — pega esto en «About»
 
 ```
-I build complete web applications — from the database schema to the interface someone actually uses.
+I'm a full-stack developer from Cali, Colombia.
 
-I can take a product from an idea to something running in production on my own: model the data, secure it, build the interface, wire up authentication and payments, deploy it and keep it running.
+I like building things people actually use, and along the way I learned to handle the whole thing myself: the database, the interface, the login, the payments, and getting it deployed and kept alive.
 
-What I do:
+Some of what I can do:
 
-• Full applications in TypeScript, end to end — React and Next.js on the front, PostgreSQL behind it
-• Relational schemas designed from scratch and evolved safely through versioned migrations
-• Multi-tenant data isolation, so each client only ever reaches their own — enforced by database policies, not by application code
-• Authentication: email, OAuth with Google, Facebook and Apple, sessions and protected routes
-• Payments and third-party integrations: checkout, webhooks, subscriptions with renewal and expiry, scheduled jobs
-• Admin panels and dashboards: inventory, orders, point of sale, reporting with charts, CRM
-• Interfaces that work on any screen, load fast and meet WCAG contrast
-• Deployment and operation on Vercel — custom domains, continuous delivery from Git
+• Complete apps with TypeScript, React and Next.js
+• Design a database in PostgreSQL and keep changing it over time without breaking what's already there
+• Keep each client's data separate so one can never see another's. I do that with policies in the database instead of the app code, because app code is easier to get wrong
+• Set up login: by email, or with Google, Facebook and Apple
+• Connect payments and other services: checkout, webhooks, subscriptions, scheduled jobs
+• Build the admin side: inventory, orders, point of sale, reports with charts, CRM
+• Make it work on any screen and stay readable for everyone
+• Deploy on Vercel with a custom domain and updates on every push
 
-Stack: TypeScript · React · Next.js (App Router) · PostgreSQL · Supabase · Tailwind CSS · Server Actions · REST APIs · Zod · Git · Vercel
+I've done all of this on my own products. TUMARKET (tumarket.co) gives small grocery stores an online shop and a point of sale. DCM ACCESS is a bilingual marketplace with its own CRM. Both are live and in use.
 
-I've proven all of it on my own products, both live: TUMARKET (tumarket.co), a multi-tenant SaaS for grocery stores, and DCM ACCESS, a bilingual marketplace with its own CRM.
+Before this I trained as a commercial pilot. I still run a checklist for everything, which turned out to be a good habit for writing software.
 
-I care most about the parts nobody notices when they work: access policies that actually hold, migrations you can replay from zero, forms that validate on the server.
+I'm in Cali, open to full-stack or frontend work, remote or local.
 
-Before software I trained as a Commercial Pilot. That's where I learned to run the checklist even when I'm certain, and to verify before committing. It transfers better than you'd expect.
-
-Based in Santiago de Cali, Colombia. Open to full-stack and frontend roles, remote or local.
-
-Portfolio → dacarma.co
-GitHub → github.com/Dcardona0512
+dacarma.co
+github.com/Dcardona0512
 ```
 
 ## Español — para el perfil en español de LinkedIn
 
 ```
-Construyo aplicaciones web completas: desde el esquema de la base de datos hasta la interfaz que alguien usa de verdad.
+Soy desarrollador full-stack, de Cali.
 
-Puedo llevar un producto de la idea a producción yo solo: modelar los datos, protegerlos, construir la interfaz, conectar autenticación y pagos, desplegarlo y mantenerlo funcionando.
+Me gusta construir cosas que la gente use de verdad, y con el tiempo aprendí a hacerme cargo de todo: la base de datos, la interfaz, el acceso, los pagos y dejarlo funcionando en producción.
 
-Lo que hago:
+Algo de lo que sé hacer:
 
-• Aplicaciones completas en TypeScript, de punta a punta — React y Next.js al frente, PostgreSQL detrás
-• Esquemas relacionales diseñados desde cero y evolucionados con migraciones versionadas
-• Aislamiento de datos multi-cliente, para que cada uno solo alcance los suyos — impuesto por políticas de base de datos, no por lógica de aplicación
-• Autenticación: correo, OAuth con Google, Facebook y Apple, sesiones y rutas protegidas
-• Pagos e integraciones con terceros: checkout, webhooks, suscripciones con renovación y vencimiento, tareas programadas
-• Paneles de administración: inventario, pedidos, punto de venta, informes con gráficas, CRM
-• Interfaces que funcionan en cualquier pantalla, cargan rápido y cumplen el contraste WCAG
-• Despliegue y operación en Vercel: dominios propios y entrega continua desde Git
+• Aplicaciones completas con TypeScript, React y Next.js
+• Diseñar una base de datos en PostgreSQL y seguir cambiándola con el tiempo sin romper lo que ya está
+• Mantener separados los datos de cada cliente para que uno nunca vea los del otro. Eso lo resuelvo con políticas en la base de datos y no en el código, porque en el código es más fácil equivocarse
+• Montar el acceso: por correo o con Google, Facebook y Apple
+• Conectar pagos y otros servicios: checkout, webhooks, suscripciones, tareas programadas
+• Armar la parte administrativa: inventario, pedidos, punto de venta, informes con gráficas, CRM
+• Que funcione en cualquier pantalla y se lea bien
+• Desplegar en Vercel con dominio propio y actualizaciones en cada push
 
-Stack: TypeScript · React · Next.js (App Router) · PostgreSQL · Supabase · Tailwind CSS · Server Actions · APIs REST · Zod · Git · Vercel
+Todo esto lo hice en mis propios productos. TUMARKET (tumarket.co) le da a las tiendas de barrio una tienda en línea y un punto de venta. DCM ACCESS es un marketplace bilingüe con CRM propio. Los dos están funcionando.
 
-Todo esto lo he demostrado en mis propios productos, ambos en producción: TUMARKET (tumarket.co), un SaaS multi-tienda para tiendas de barrio, y DCM ACCESS, un marketplace bilingüe con CRM propio.
+Antes de esto me formé como piloto comercial. Sigo usando checklist para todo, que resultó ser una buena costumbre para programar.
 
-Me importan las partes que nadie nota cuando funcionan: políticas de acceso que aguantan, migraciones que se reproducen desde cero y validación en el servidor.
+Estoy en Cali, abierto a trabajo full-stack o frontend, remoto o presencial.
 
-Antes del software me formé como Piloto Comercial. De ahí me traje la costumbre de seguir el procedimiento aunque esté seguro, y de verificar antes de decidir.
-
-Cali, Colombia. Abierto a roles full-stack y frontend, remoto o presencial.
-
-Portafolio → dacarma.co
-GitHub → github.com/Dcardona0512
+dacarma.co
+github.com/Dcardona0512
 ```
 
 ---
 
-## Por qué está escrito así
+## Qué cambié para que suene tuyo
 
-- **Capacidades primero, proyectos como prueba.** Un reclutador no contrata
-  TUMARKET: contrata a quien pueda hacer *lo suyo*. Por eso el cuerpo del texto
-  es lo que sabes hacer, y los productos aparecen al final como respaldo de que
-  no es teoría. Al revés se lee como la ficha de un producto.
-- **La primera línea es la única que se ve garantizada.** LinkedIn corta a las
-  3 primeras líneas. «Construyo aplicaciones web completas, desde el esquema de
-  la base de datos hasta la interfaz» dice tu alcance de una vez. Empezar con
-  «Soy David, apasionado por la tecnología» desperdicia ese espacio.
-- **Cada viñeta es transferible.** Están escritas como capacidades («aislamiento
-  de datos multi-cliente»), no como anécdotas de un proyecto («las tiendas de
-  TUMARKET»). Así encajan en cualquier oferta, no solo en una de retail.
-- **Todo es verificable.** Cada punto sale de código tuyo: las migraciones y el
-  RLS de tu proyecto de Supabase, los webhooks y el cron de TUMARKET, el CRM de
-  DCM ACCESS, el contraste WCAG de dacarma.co.
-- **Sin adjetivos sobre ti mismo.** Nada de «creativo», «apasionado» o
-  «autodidacta»: los escribe todo el mundo y el reclutador los descuenta.
-- **El piloto, una vez y al final.** Es el gancho que te separa de mil perfiles
-  de React. Repetirlo hace dudar de tu compromiso con el desarrollo.
+La versión anterior estaba demasiado pulida, y eso hoy se lee como escrito por
+una máquina. Lo que la delataba:
+
+- **Rayas largas (—) por todas partes.** Casi nadie las usa al escribir rápido.
+  Fuera; ahora hay puntos y comas.
+- **Frases redondas de más.** «I care most about the parts nobody notices when
+  they work» está muy bien construida, y justo por eso suena a eslogan. Fuera.
+- **Viñetas todas del mismo largo**, con la misma estructura. La gente no
+  escribe así. Ahora unas son de cinco palabras y otras de dos líneas.
+- **Vocabulario innecesariamente técnico:** «multi-tenant data isolation,
+  enforced by database policies, not by application code» pasó a «que uno nunca
+  vea los datos del otro… porque en el código es más fácil equivocarse». Dice lo
+  mismo y explica el *porqué*, que es lo que hace alguien cuando habla de su
+  trabajo.
+- **Contracciones y voz directa:** «I'm», «I've», «what's already there».
+
+Hay una razón práctica además del tono: **el inglés sencillo se parece más al
+que vas a hablar en la entrevista.** Un «About» escrito como un artículo de
+revista crea una expectativa que luego hay que sostener en una llamada.
+
+Lo que no cambió: sigue abriendo por lo que sabes hacer, los proyectos siguen al
+final como prueba, y cada punto sigue saliendo de código tuyo.
