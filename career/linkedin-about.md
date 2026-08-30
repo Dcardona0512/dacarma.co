@@ -26,7 +26,7 @@ Some of what I can do:
 • Make it work on any screen and stay readable for everyone
 • Deploy on Vercel with a custom domain and updates on every push
 
-I've done all of this on my own products. TUMARKET (tumarket.co) gives small grocery stores an online shop and a point of sale. DCM ACCESS is a bilingual marketplace with its own CRM. Both are live and in use.
+None of that comes from tutorials. It's all from products I built and still keep running. You can see them on my site.
 
 Before this I trained as a commercial pilot. I still run a checklist for everything, which turned out to be a good habit for writing software.
 
@@ -54,7 +54,7 @@ Algo de lo que sé hacer:
 • Que funcione en cualquier pantalla y se lea bien
 • Desplegar en Vercel con dominio propio y actualizaciones en cada push
 
-Todo esto lo hice en mis propios productos. TUMARKET (tumarket.co) le da a las tiendas de barrio una tienda en línea y un punto de venta. DCM ACCESS es un marketplace bilingüe con CRM propio. Los dos están funcionando.
+Nada de esto salió de tutoriales. Todo viene de productos que construí y que sigo manteniendo. Se pueden ver en mi sitio.
 
 Antes de esto me formé como piloto comercial. Sigo usando checklist para todo, que resultó ser una buena costumbre para programar.
 
@@ -66,27 +66,37 @@ github.com/Dcardona0512
 
 ---
 
-## Qué cambié para que suene tuyo
+## Sobre quitar los proyectos
 
-La versión anterior estaba demasiado pulida, y eso hoy se lee como escrito por
-una máquina. Lo que la delataba:
+Los nombres ya no están. Pero dejé una frase corta —«Nada de esto salió de
+tutoriales. Todo viene de productos que construí y que sigo manteniendo»— porque
+sin ella la lista de viñetas se queda como afirmaciones sueltas, iguales a las
+de cualquier perfil recién salido de un curso. Esa línea la separa de eso sin
+repetir lo que ya se ve en el portafolio.
 
-- **Rayas largas (—) por todas partes.** Casi nadie las usa al escribir rápido.
-  Fuera; ahora hay puntos y comas.
-- **Frases redondas de más.** «I care most about the parts nobody notices when
-  they work» está muy bien construida, y justo por eso suena a eslogan. Fuera.
-- **Viñetas todas del mismo largo**, con la misma estructura. La gente no
-  escribe así. Ahora unas son de cinco palabras y otras de dos líneas.
-- **Vocabulario innecesariamente técnico:** «multi-tenant data isolation,
-  enforced by database policies, not by application code» pasó a «que uno nunca
-  vea los datos del otro… porque en el código es más fácil equivocarse». Dice lo
-  mismo y explica el *porqué*, que es lo que hace alguien cuando habla de su
-  trabajo.
-- **Contracciones y voz directa:** «I'm», «I've», «what's already there».
+**Donde sí conviene que aparezcan con nombre:**
 
-Hay una razón práctica además del tono: **el inglés sencillo se parece más al
-que vas a hablar en la entrevista.** Un «About» escrito como un artículo de
-revista crea una expectativa que luego hay que sostener en una llamada.
+- **Sección «Proyectos» de LinkedIn.** Ahí es donde los busca el reclutador, con
+  enlace en vivo. Está en la guía.
+- **Sección «Experiencia».** Las viñetas de DACARMA sí los detallan, y es lo que
+  el reclutador lee después del «Acerca de».
+- **«Destacado».** Fija ahí tumarket.co con una captura del panel.
+- **El CV.** Ahí no se pueden omitir: es el documento que se lee sin navegar.
 
-Lo que no cambió: sigue abriendo por lo que sabes hacer, los proyectos siguen al
-final como prueba, y cada punto sigue saliendo de código tuyo.
+Así el «Acerca de» dice quién eres y qué haces, y el detalle vive donde
+corresponde en vez de repetirse tres veces.
+
+---
+
+## Por qué está escrito así
+
+- **La primera línea es la única garantizada.** LinkedIn corta a las 3 primeras
+  antes del «ver más».
+- **Capacidades, no anécdotas.** Escritas para que encajen en cualquier oferta.
+- **Nada de adjetivos sobre ti mismo.** «Creativo», «apasionado» o
+  «autodidacta» los escribe todo el mundo y el reclutador los descuenta.
+- **El piloto, una vez y al final.** Es lo que te hace memorable; repetirlo hace
+  dudar de tu compromiso con el desarrollo.
+- **Inglés sencillo a propósito.** Se parece más al que vas a hablar en la
+  entrevista. Un texto escrito como artículo de revista crea una expectativa que
+  luego toca sostener en una llamada.
