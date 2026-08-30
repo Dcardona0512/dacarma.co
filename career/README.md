@@ -12,6 +12,8 @@ verificable de los proyectos reales — no desde una plantilla genérica.
 | `templates/` | HTML del que salen los PDF — aquí se edita el contenido |
 | `build-pdf.js` | Genera los PDF desde las plantillas |
 | `linkedin.md` · `cv-en.md` · `cv-es.md` | Los mismos textos en Markdown, por si quieres copiarlos sueltos |
+| `bio.md` | Bio corta (EN/ES) para el «About» de LinkedIn o cualquier presentación breve |
+| `github-profile-README.md` | README de perfil de GitHub, listo para pegar |
 
 ### `pdf/`
 
