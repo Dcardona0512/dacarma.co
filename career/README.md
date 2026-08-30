@@ -13,6 +13,7 @@ verificable de los proyectos reales — no desde una plantilla genérica.
 | `build-pdf.js` | Genera los PDF desde las plantillas |
 | `linkedin.md` · `cv-en.md` · `cv-es.md` | Los mismos textos en Markdown, por si quieres copiarlos sueltos |
 | `linkedin-about.md` | **El «Acerca de» de LinkedIn**, listo para pegar (EN y ES) |
+| `stack.md` | Inventario completo de tu stack, verificado contra el código |
 | `bio.md` | Bio corta (EN/ES) para GitHub o presentaciones breves |
 | `github-profile-README.md` | README de perfil de GitHub, listo para pegar |
 
