@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Guía para tu perfil de LinkedIn — David Cardona Martínez</title>
+    <link rel="stylesheet" href="cv.css" />
+    <style>
+      /* La guía es un documento de varias páginas, no un CV. */
+      @page { margin: 15mm 16mm; }
+      body { font-size: 10pt; line-height: 1.5; }
+      h1 { font-size: 20pt; }
+      h2 { margin-top: 7mm; font-size: 9pt; }
+      h3 {
+        font-size: 10.5pt;
+        font-weight: 700;
+        margin: 4mm 0 1.5mm;
+        letter-spacing: -0.01em;
+      }
+      .sub { color: var(--muted); margin-top: 2mm; }
+      .step {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 700;
+        font-size: 8pt;
+        padding: 0.6mm 2mm;
+        border-radius: 2mm;
+        margin-right: 1.5mm;
+      }
+      .copy {
+        background: #f4f7fa;
+        border: 0.6pt solid var(--rule);
+        border-left: 2.4pt solid var(--accent);
+        padding: 3mm 3.5mm;
+        margin: 2mm 0 3mm;
+        white-space: pre-wrap;
+        font-size: 9.2pt;
+        line-height: 1.45;
+        page-break-inside: avoid;
+      }
+      .why {
+        color: var(--muted);
+        font-size: 9pt;
+        margin-bottom: 2mm;
+      }
+      .warn {
+        background: #fff8e1;
+        border-left: 2.4pt solid #f0b429;
+        padding: 2.5mm 3mm;
+        margin: 3mm 0;
+        font-size: 9pt;
+        color: #6b5200;
+        page-break-inside: avoid;
+      }
+      table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+      td { padding: 1.4mm 0; border-bottom: 0.5pt solid var(--rule); vertical-align: top; }
+      td:first-child { font-weight: 700; width: 32%; padding-right: 4mm; }
+      ol { padding-left: 5mm; }
+      ol li { padding-left: 0; margin-bottom: 1.4mm; }
+      ol li::before { content: none; }
+      .avoid { page-break-inside: avoid; }
+    </style>
+  </head>
+  <body>
+    <header class="avoid">
+      <h1>Cómo llenar tu perfil de LinkedIn</h1>
+      <div class="role">David Cardona Martínez — Desarrollador Full-Stack</div>
+      <p class="sub">
+        Todo listo para copiar y pegar. El perfil va <b>en inglés</b> porque es
+        donde están los reclutadores de remoto, con el «About» también en
+        español. Lo resaltado en amarillo son datos que solo tú tienes.
+      </p>
+    </header>
+
+    <h2>1 · Titular (Headline)</h2>
+    <p class="why">
+      Es lo único que se ve en los resultados de búsqueda. LinkedIn corta a 220
+      caracteres. Este lleva rol, stack y prueba de que existe producto real:
+    </p>
+    <div class="copy">Full-Stack Developer · TypeScript, React &amp; Next.js · Building TUMARKET, a multi-tenant SaaS on Supabase &amp; PostgreSQL</div>
+    <p class="why">Si buscas empleo de forma activa, esta funciona mejor:</p>
+    <div class="copy">Full-Stack Developer · TypeScript · React · Next.js · PostgreSQL · Open to remote roles</div>
+    <div class="warn">
+      <b>No pongas «Junior».</b> No te lo van a poner más fácil por ponértelo tú,
+      y un SaaS multi-tienda en producción no lo es.
+    </div>
+
+    <h2>2 · Acerca de (About)</h2>
+    <p class="why">
+      Abre con lo que construiste, no con la transición de carrera. El dato de
+      piloto aparece <b>una sola vez</b>, casi al final: es el gancho que te hace
+      memorable, pero repetirlo hace dudar de tu compromiso con el desarrollo.
+    </p>
+    <div class="copy">I build and ship products end to end — not demos.
+
+TUMARKET (tumarket.co) is a multi-tenant SaaS I designed, built and run on my own. Corner shops get an online storefront, a POS with cash closing, inventory with barcode scanning, order picking and sales reports. Underneath it sits PostgreSQL on Supabase with row-level security on every table, 73 versioned migrations, per-store data isolation, MercadoPago subscriptions with webhooks, and sign-in through Google, Facebook and Apple. It runs in production with real stores and real orders.
+
+DCM ACCESS is a bilingual marketplace with its own CRM — leads, opportunities, deals, commissions — built with Next.js route groups, a locale segment and Zod validating everything that crosses a boundary.
+
+Day to day that means TypeScript across the whole stack, React and Next.js on the front, PostgreSQL and Supabase behind it, Tailwind for the interface, Vercel for delivery. I care most about the parts nobody notices when they work: access policies that actually hold, migrations you can replay from zero, forms that validate on the server, contrast that passes WCAG.
+
+Before software I trained as a Commercial Pilot. That's where I learned to run the checklist even when I'm certain, and to verify before committing. It transfers better than you'd expect.
+
+Based in Santiago de Cali, Colombia. Open to full-stack and frontend roles.
+
+—
+
+Construyo productos completos, no demos.
+
+TUMARKET (tumarket.co) es un SaaS multi-tienda que diseñé, construí y opero yo solo: escaparate en línea, POS con cierre de caja, inventario con lector de códigos de barras, alistamiento de pedidos e informes de ventas. Debajo hay PostgreSQL en Supabase con RLS en todas las tablas, 73 migraciones versionadas, aislamiento de datos por tienda, suscripciones con MercadoPago y webhooks, y acceso con Google, Facebook y Apple. Está en producción con tiendas reales.
+
+Trabajo con TypeScript en todo el stack, React y Next.js al frente, PostgreSQL y Supabase detrás, Tailwind en la interfaz y Vercel para desplegar. Me importan las partes que no se ven cuando funcionan: políticas de acceso que aguantan, migraciones que se pueden reproducir desde cero, validación en el servidor y contraste que cumple WCAG.
+
+Antes del software me formé como Piloto Comercial. De ahí me traje la costumbre de seguir el procedimiento aunque esté seguro, y de verificar antes de decidir.
+
+Cali, Colombia. Abierto a roles full-stack y frontend.</div>
+
+    <h2>3 · Experiencia</h2>
+    <p class="why">
+      Añade un puesto con estos campos exactos:
+    </p>
+    <table>
+      <tr><td>Título</td><td>Founder &amp; Full-Stack Developer</td></tr>
+      <tr><td>Empresa</td><td>DACARMA</td></tr>
+      <tr><td>Tipo de empleo</td><td>Self-employed</td></tr>
+      <tr><td>Ubicación</td><td>Santiago de Cali, Colombia</td></tr>
+      <tr><td>Fechas</td><td><span class="todo">[mes/año]</span> — Present</td></tr>
+    </table>
+    <p class="why" style="margin-top: 3mm">Descripción:</p>
+    <div class="copy">Independent software studio. I design, build and operate the products below.
+
+• TUMARKET (tumarket.co) — multi-tenant SaaS for neighbourhood grocery stores. Built the whole system: storefront, POS with cash closing, inventory with barcode scanning, order picking, and sales reporting with charts.
+• Modelled the database in PostgreSQL on Supabase across 9 tables, with row-level security on every one and 73 versioned migrations. Each store's data, images and reports are isolated by policy, not by application code.
+• Shipped MercadoPago subscriptions end to end — checkout, webhook, trial period, expiry and renewal — plus a cron endpoint that warns stores before their plan lapses.
+• Added sign-in with Google, Facebook and Apple through Supabase Auth, with email confirmation and reserved route handling.
+• Now serving <span class="todo">[N]</span> stores with 400+ products and live orders.
+
+• DCM ACCESS (dcmxaccess.vercel.app) — bilingual brokerage marketplace with an in-house CRM covering leads, opportunities, deals, commissions and providers.
+• Structured it with Next.js route groups and a locale segment so the public site and the CRM share one codebase, with Zod validating every boundary.
+
+• dacarma.co — rebuilt my portfolio off a hosted page builder into a Next.js codebase I fully control, matching the original design to the pixel while moving the contact form onto my own API route with server-side validation.
+
+Stack: TypeScript · React · Next.js · PostgreSQL · Supabase · Tailwind CSS · Vercel · Git</div>
+    <div class="warn">
+      Si prefieres no figurar como <i>Founder</i>, cambia el título a
+      <b>Full-Stack Developer — Independent</b> y borra la primera línea. Las
+      viñetas funcionan igual.
+    </div>
+
+    <h2>4 · Aptitudes (Skills)</h2>
+    <p class="why">
+      LinkedIn pondera sobre todo <b>las tres primeras</b> y son las que se
+      validan con recomendaciones. Añádelas en este orden:
+    </p>
+    <div class="copy">1. TypeScript          6. Tailwind CSS        11. Database Design
+2. React               7. Node.js             12. Authentication &amp; Authorization
+3. Next.js             8. REST APIs           13. Web Accessibility (WCAG)
+4. PostgreSQL          9. Git                 14. Responsive Web Design
+5. Supabase           10. Vercel              15. SQL</div>
+    <div class="warn">
+      <b>No añadas nada que no puedas defender diez minutos en una llamada.</b>
+      Docker, AWS y testing no están en la lista porque no hay rastro de ellos
+      en tu código. Un entrevistador técnico lo detecta en la primera pregunta,
+      y a partir de ahí duda de todo lo demás.
+    </div>
+
+    <h2>5 · Proyectos</h2>
+    <p class="why">Sección «Projects», cada uno con su enlace en vivo:</p>
+    <table>
+      <tr><td>TUMARKET</td><td>tumarket.co — Multi-tenant SaaS: storefront, POS, inventory and subscriptions for grocery stores</td></tr>
+      <tr><td>DCM ACCESS</td><td>dcmxaccess.vercel.app — Bilingual brokerage marketplace with an in-house CRM</td></tr>
+      <tr><td>dacarma.co</td><td>dacarma.co — Personal portfolio, hand-built in Next.js</td></tr>
+    </table>
+
+    <h2>6 · Destacado (Featured)</h2>
+    <p class="why">Fija tres elementos, en este orden:</p>
+    <ol>
+      <li>
+        <b>TUMARKET</b> — enlace a tumarket.co con una captura <b>del panel</b>,
+        no de la portada. Lo que impresiona es el POS y los informes, no el hero.
+      </li>
+      <li><b>dacarma.co</b> — el portafolio.</li>
+      <li>
+        <b>GitHub</b> — solo cuando tenga README de perfil y repos fijados
+        (ver la última página).
+      </li>
+    </ol>
+
+    <h2>7 · Formación, certificaciones e idiomas</h2>
+    <table>
+      <tr><td>Education</td><td><span class="todo">[título]</span> — <span class="todo">[institución]</span>, <span class="todo">[años]</span></td></tr>
+      <tr><td>Licenses &amp; certifications</td><td>Commercial Pilot License — <span class="todo">[autoridad]</span>, <span class="todo">[año]</span></td></tr>
+      <tr><td>Languages</td><td>Spanish — Native · English — <span class="todo">[nivel]</span></td></tr>
+    </table>
+
+    <h2>8 · Ajustes del perfil</h2>
+    <table>
+      <tr><td>URL personalizada</td><td>Ya la tienes bien: <b>/in/dacarma/</b>. No la toques.</td></tr>
+      <tr><td>Open to work</td><td>Actívalo en modo <b>«Solo para reclutadores»</b> si sigues operando DACARMA de cara al público. El marco verde reduce el alcance del perfil en algunos sectores.</td></tr>
+      <tr><td>Foto</td><td>La del portafolio funciona: mirada a cámara, fondo limpio.</td></tr>
+      <tr><td>Banner</td><td>Una captura del panel de TUMARKET pesa más que un fondo abstracto. Que se lea el producto.</td></tr>
+      <tr><td>Ubicación</td><td>Santiago de Cali. Si buscas remoto internacional, añade «Open to remote» al titular; no pongas una ubicación falsa.</td></tr>
+      <tr><td>Sitio web</td><td>dacarma.co como <i>Portfolio</i> y tumarket.co como <i>Product</i>.</td></tr>
+    </table>
+
+    <h2 style="page-break-before: always">9 · Antes de que un reclutador entre</h2>
+    <p class="why">
+      Recorrí tus enlaces igual que lo haría alguien revisando tu perfil.
+      Funcionan los cinco, y los README de <b>dacarma.co</b> y <b>dcm-access</b>
+      están bien escritos. Esto es lo que sí falla, por orden de daño:
+    </p>
+    <ol>
+      <li>
+        <b>Tres tarjetas de dacarma.co enlazan a trabajo ajeno.</b> Dos a
+        <i>hxmzaehsan.com</i> y una al marketplace de Framer: son las plantillas
+        del autor original. Quien pulse ve trabajo de otra persona bajo tu
+        nombre. <b>Es el problema más grave que tienes.</b> Lo mínimo: sustituir
+        una por DCM ACCESS y quitar las otras dos — dos proyectos reales valen
+        más que cuatro con relleno.
+      </li>
+      <li>
+        <b>El formulario de contacto devuelve error 500.</b> Faltan las claves
+        de Resend en Vercel. Si alguien te escribe desde el portafolio, ese
+        mensaje se pierde sin que nadie se entere.
+      </li>
+      <li>
+        <b>No tienes README de perfil en GitHub.</b> Es lo primero que se ve al
+        entrar a tu cuenta. Se arregla creando un repositorio llamado
+        <b>Dcardona0512</b> con un <b>README.md</b> dentro. Fija además los tres
+        repos.
+      </li>
+      <li>
+        <b>TUMARKET es privado</b>, así que no cuenta como muestra de código por
+        más que sea tu mejor trabajo. Opciones: hacerlo público, extraer un
+        módulo representativo a un repo aparte, o publicar un caso de estudio
+        con capturas del panel en el portafolio.
+      </li>
+    </ol>
+
+    <div class="warn">
+      <b>Sobre las cifras.</b> Todo lo que dicen estos textos se comprobó contra
+      la fuente: las 73 migraciones y el RLS en las 9 tablas salen de tu proyecto
+      de Supabase, los conteos de producción, y los stacks de los
+      <i>package.json</i>. Si alguna cambia — por ejemplo el número de tiendas —
+      actualízala. Un número desactualizado en una entrevista cuesta más que no
+      haberlo puesto.
+    </div>
+  </body>
+</html>

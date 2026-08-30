@@ -7,18 +7,42 @@ verificable de los proyectos reales — no desde una plantilla genérica.
 
 | Archivo | Qué es |
 |---|---|
-| `DATOS-PENDIENTES.md` | **Empieza aquí.** Los datos que faltan para completar los tres documentos |
-| `linkedin.md` | Perfil de LinkedIn en inglés, sección por sección, listo para copiar |
-| `cv-en.md` | CV en inglés — mercado remoto internacional |
-| `cv-es.md` | CV en español — mercado colombiano |
+| `DATOS-PENDIENTES.md` | **Empieza aquí.** Los datos que faltan y la auditoría de tus enlaces |
+| `pdf/` | Los tres PDF listos para usar |
+| `templates/` | HTML del que salen los PDF — aquí se edita el contenido |
+| `build-pdf.js` | Genera los PDF desde las plantillas |
+| `linkedin.md` · `cv-en.md` · `cv-es.md` | Los mismos textos en Markdown, por si quieres copiarlos sueltos |
+
+### `pdf/`
+
+| PDF | Para qué |
+|---|---|
+| `David-Cardona-Martinez-Desarrollador-Full-Stack.pdf` | CV en español — 1 página |
+| `David-Cardona-Martinez-Full-Stack-Developer.pdf` | CV en inglés — 1 página |
+| `Guia-LinkedIn-David-Cardona.pdf` | Guía de 5 páginas para llenar LinkedIn, con los textos listos para copiar |
+
+## Regenerar los PDF
+
+Después de editar cualquier plantilla de `templates/`:
+
+```bash
+npx playwright install chromium   # solo la primera vez
+node career/build-pdf.js
+```
+
+El script avisa si un CV se pasa de una página. Playwright no está en las
+dependencias del proyecto a propósito: son 50 MB que el sitio no necesita para
+compilar.
 
 ## Orden de trabajo
 
 1. Rellena `DATOS-PENDIENTES.md`.
-2. Yo sustituyo los marcadores `[[ ]]` en los tres documentos.
-3. Arregla los dos problemas de credibilidad que están al final de ese archivo
-   (enlaces ajenos en el portafolio, formulario de contacto caído).
-4. Exporta los CV a PDF y actualiza LinkedIn.
+2. Sustituye los marcadores en `templates/cv-es.html`, `templates/cv-en.html` y
+   `templates/linkedin-guide.html` — están marcados con `class="todo"` y salen
+   resaltados en amarillo en el PDF.
+3. Regenera los PDF y **borra el aviso de borrador** (`.draft-note`) de los CV.
+4. Arregla los problemas de credibilidad de `DATOS-PENDIENTES.md`.
+5. Actualiza LinkedIn siguiendo la guía.
 
 ## De dónde sale cada afirmación
 

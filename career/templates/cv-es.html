@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>David Cardona Martínez — Desarrollador Full-Stack</title>
+    <link rel="stylesheet" href="cv.css" />
+  </head>
+  <body>
+    <header>
+      <h1>David Cardona Martínez</h1>
+      <div class="role">Desarrollador Full-Stack</div>
+      <div class="contact">
+        Santiago de Cali, Colombia <span aria-hidden="true">·</span>
+        dcardona0512@gmail.com <span aria-hidden="true">·</span>
+        <span class="todo">[teléfono]</span>
+        <br />
+        <a href="https://dacarma.co">dacarma.co</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/Dcardona0512">github.com/Dcardona0512</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.linkedin.com/in/dacarma/">linkedin.com/in/dacarma</a>
+      </div>
+    </header>
+
+    <h2>Perfil</h2>
+    <p class="lede">
+      Desarrollador full-stack que diseña, construye y opera productos en
+      producción. Creé TUMARKET, un SaaS multi-tienda sobre PostgreSQL con
+      seguridad a nivel de fila, cobro de suscripciones y webhooks de pago.
+      Trabajo en todo el stack con TypeScript: desde las políticas de base de
+      datos hasta interfaces accesibles.
+    </p>
+
+    <h2>Competencias técnicas</h2>
+    <div class="skill"><b>Lenguajes:</b> <span>TypeScript, JavaScript, SQL, HTML, CSS</span></div>
+    <div class="skill"><b>Frontend:</b> <span>React 19, Next.js (App Router), Tailwind CSS, Motion</span></div>
+    <div class="skill"><b>Backend y datos:</b> <span>PostgreSQL, Supabase, Server Actions, APIs REST, Zod</span></div>
+    <div class="skill"><b>Auth y seguridad:</b> <span>Supabase Auth, OAuth (Google/Facebook/Apple), Row-Level Security</span></div>
+    <div class="skill"><b>Integraciones:</b> <span>MercadoPago (checkout y webhooks), Resend, tareas cron</span></div>
+    <div class="skill"><b>Herramientas:</b> <span>Git, GitHub, Vercel, ESLint, Prettier, Claude Code</span></div>
+    <div class="skill"><b>Prácticas:</b> <span>Migraciones de base de datos, multi-tenancy, accesibilidad WCAG, diseño responsive</span></div>
+
+    <h2>Experiencia</h2>
+    <div class="job">
+      <h3>Fundador y Desarrollador Full-Stack — DACARMA</h3>
+      <div class="when"><span class="todo">[mes/año]</span> – Actualidad</div>
+    </div>
+    <p class="job-note">
+      Estudio independiente. Único desarrollador en todos los productos.
+    </p>
+    <ul>
+      <li>
+        Construí y opero <b>TUMARKET</b>, un SaaS multi-tienda para tiendas de
+        barrio: escaparate en línea, POS con cierre de caja, inventario con
+        lector de códigos de barras, alistamiento de pedidos e informes de
+        ventas. En producción con <span class="todo">[N]</span> tiendas, más de
+        400 productos y pedidos reales.
+      </li>
+      <li>
+        Diseñé el esquema en PostgreSQL sobre 9 tablas con <b>seguridad a nivel
+        de fila en todas y 73 migraciones versionadas</b>, aislando datos,
+        imágenes e informes de cada tienda mediante políticas de base de datos
+        y no lógica de aplicación.
+      </li>
+      <li>
+        Implementé <b>suscripciones con MercadoPago de punta a punta</b> —
+        checkout, webhook, periodo de cortesía, vencimiento y planes mensual y
+        anual — más un endpoint cron que avisa antes de que expire el plan.
+      </li>
+      <li>
+        Integré <b>Supabase Auth con acceso por Google, Facebook y Apple</b>,
+        confirmación por correo y reserva de rutas.
+      </li>
+      <li>
+        Desarrollé <b>DCM ACCESS</b>, un marketplace bilingüe de brokerage con
+        CRM propio (leads, oportunidades, negocios, comisiones, proveedores),
+        usando route groups de Next.js y segmento de idioma para compartir un
+        solo código entre el sitio público y el CRM.
+      </li>
+      <li>
+        Migré <b>dacarma.co</b> desde un constructor alojado a código propio en
+        Next.js, reproduciendo el diseño original con exactitud y llevando el
+        formulario de contacto a una API propia con validación en servidor.
+      </li>
+    </ul>
+
+    <h2>Proyectos destacados</h2>
+    <div class="project">
+      <span class="name">TUMARKET</span> —
+      <a class="link" href="https://www.tumarket.co/">tumarket.co</a><br />
+      <span class="desc">SaaS multi-tienda para tiendas de barrio.</span>
+      <span class="stack">Next.js 15 · React 19 · TypeScript · Tailwind CSS · Supabase (PostgreSQL 17) · MercadoPago · ZXing. 121 archivos TypeScript, 73 migraciones.</span>
+    </div>
+    <div class="project">
+      <span class="name">DCM ACCESS</span> —
+      <a class="link" href="https://dcmxaccess.vercel.app/">dcmxaccess.vercel.app</a><br />
+      <span class="desc">Marketplace bilingüe de brokerage con CRM a medida.</span>
+      <span class="stack">Next.js 16 · React 19 · TypeScript · Tailwind CSS · Zod · Motion.</span>
+    </div>
+    <div class="project">
+      <span class="name">dacarma.co</span> —
+      <a class="link" href="https://dacarma.co/">dacarma.co</a><br />
+      <span class="desc">Portafolio personal construido desde cero.</span>
+      <span class="stack">Next.js 16 · Tipografías auto-alojadas · Contraste verificado contra WCAG AA · Formulario sobre API con Resend.</span>
+    </div>
+
+    <div class="trio">
+      <div>
+        <h2>Formación</h2>
+        <p><span class="todo">[título]</span><br /><span class="todo">[institución, años]</span></p>
+      </div>
+      <div>
+        <h2>Certificaciones</h2>
+        <p>
+          Licencia de Piloto Comercial<br />
+          <span class="todo">[autoridad, año]</span>
+        </p>
+      </div>
+      <div>
+        <h2>Idiomas</h2>
+        <p>Español — nativo<br />Inglés — <span class="todo">[nivel]</span></p>
+      </div>
+    </div>
+
+    <p class="draft-note">
+      <b>Borrador.</b> Lo resaltado en amarillo son datos pendientes. Complétalos
+      y vuelve a generar el PDF antes de enviarlo a nadie.
+    </p>
+  </body>
+</html>

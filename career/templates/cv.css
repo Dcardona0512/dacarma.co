@@ -1,0 +1,194 @@
+/* Print styles shared by both CVs.
+   A4, selectable text, single column — the layout ATS parsers read cleanly. */
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../../public/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../../public/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@page {
+  size: A4;
+  margin: 13mm 14mm;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #14171a;
+  --muted: #55606b;
+  --rule: #d7dde3;
+  --accent: #0b4f9e;
+}
+
+body {
+  font-family: "Satoshi", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 9.4pt;
+  line-height: 1.42;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---- header ---- */
+h1 {
+  font-size: 19pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.role {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+  margin-top: 1.5mm;
+}
+
+.contact {
+  margin-top: 2mm;
+  font-size: 8.6pt;
+  color: var(--muted);
+}
+
+.contact a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.contact span[aria-hidden] {
+  color: var(--rule);
+  padding: 0 1.5mm;
+}
+
+/* ---- sections ---- */
+h2 {
+  font-size: 8.4pt;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 0.6pt solid var(--rule);
+  padding-bottom: 1mm;
+  margin: 3.9mm 0 2mm;
+}
+
+p.lede {
+  color: var(--muted);
+}
+
+/* ---- skills: label/value rows, no table ---- */
+.skill {
+  margin-bottom: 0.7mm;
+}
+.skill b {
+  font-weight: 700;
+}
+.skill span {
+  color: var(--muted);
+}
+
+/* ---- experience ---- */
+.job {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4mm;
+}
+.job h3 {
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.job .when {
+  font-size: 8.4pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.job-note {
+  color: var(--muted);
+  font-size: 8.8pt;
+  margin: 0.6mm 0 1.6mm;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  position: relative;
+  padding-left: 3.4mm;
+  margin-bottom: 0.85mm;
+}
+li::before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 7pt;
+  top: 0.1mm;
+}
+
+/* ---- projects ---- */
+.project {
+  margin-bottom: 2mm;
+}
+.project .name {
+  font-weight: 700;
+}
+.project .link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 8.6pt;
+}
+.project .desc {
+  color: var(--muted);
+}
+.project .stack {
+  color: var(--muted);
+  font-size: 8.4pt;
+}
+
+/* ---- footer trio ---- */
+.trio {
+  display: grid;
+  grid-template-columns: 1.15fr 1.15fr 0.7fr;
+  gap: 5mm;
+}
+.trio h2 {
+  margin-top: 0;
+}
+.trio p,
+.trio li {
+  font-size: 8.8pt;
+}
+
+/* ---- placeholders ---- */
+.todo {
+  background: #fff3bf;
+  border-bottom: 0.8pt dashed #b58900;
+  padding: 0 0.8mm;
+  font-weight: 700;
+  color: #6b5200;
+}
+
+.draft-note {
+  margin-top: 3mm;
+  padding: 2mm 3mm;
+  background: #fff8e1;
+  border-left: 2.4pt solid #f0b429;
+  font-size: 8pt;
+  color: #6b5200;
+}
