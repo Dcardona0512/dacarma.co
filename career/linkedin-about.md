@@ -1,10 +1,12 @@
 # «Acerca de» de LinkedIn
 
-LinkedIn permite 2.600 caracteres y solo muestra **las 3 primeras líneas** antes
-del «…ver más».
+LinkedIn permite 2.600 caracteres, pero eso no es una meta. Un reclutador
+estricto escanea; no lee. Esta versión va en ~1.050 y se recorre en 20 segundos.
 
-Pega **solo la versión en inglés**. Para el español usa *Añadir perfil en otro
-idioma*, arriba a la derecha de tu perfil.
+Solo se ven **las 3 primeras líneas** antes del «…ver más».
+
+Pega la versión en inglés. Para el español usa *Añadir perfil en otro idioma*,
+arriba a la derecha de tu perfil.
 
 ---
 
@@ -13,107 +15,81 @@ idioma*, arriba a la derecha de tu perfil.
 ```
 I'm David Cardona Martínez, a full-stack developer from Cali, Colombia.
 
-I build complete web applications, from the database schema to the interface someone actually uses. I can take a product from an idea to something running in production on my own: model the data, secure it, build the interface, wire up authentication and payments, deploy it and keep it running.
+I build web applications end to end: the database, the interface, authentication, payments, and getting it deployed and kept running. I've done it alone, from an empty repo to something in production with real users.
 
-Some of what I can do:
+What that involves:
 
-• Complete apps with TypeScript, React and Next.js
-• Design a database in PostgreSQL and keep changing it over time without breaking what's already there
-• Keep each client's data separate so one can never see another's. I do that with policies in the database instead of the app code, because app code is easier to get wrong
-• Set up login: by email, or with Google, Facebook and Apple
-• Connect payments and other services: checkout, webhooks, subscriptions, scheduled jobs
-• Build the admin side: inventory, orders, point of sale, reports with charts, CRM
-• Make it work on any screen and stay readable for everyone
-• Deploy on Vercel with a custom domain and updates on every push
+• Designing relational databases and evolving them without breaking what's already live
+• Keeping each client's data isolated, enforced in the database rather than in app code
+• Authentication and permissions: email, OAuth, sessions, protected routes
+• Payments and third-party integrations: checkout, webhooks, subscriptions, scheduled jobs
+• Dashboards and internal tools people use to actually run a business
+• Interfaces that hold up on any screen and stay accessible
 
-Day to day I work with TypeScript, React, Next.js, PostgreSQL, Supabase, Tailwind CSS, Zod, Git and Vercel. I've also worked with Firebase and Stripe.
+TypeScript, React, Next.js, PostgreSQL, Supabase, Tailwind CSS, Zod, Git, Vercel. I've also worked with Firebase and Stripe.
 
-None of that comes from tutorials. It's all from products I built and still keep running. You can see them on my site.
+None of it comes from tutorials. It's from products I built and still maintain, and they're on my site.
 
-Before this I trained as a commercial pilot. I still run a checklist for everything, which turned out to be a good habit for writing software.
+Before software I trained as a commercial pilot. I still run a checklist for everything, which turned out to be a good habit for this one.
 
-I'm in Cali, open to full-stack or frontend work, remote or local.
+Open to full-stack or frontend work, remote or in Cali.
 
-dacarma.co
-github.com/Dcardona0512
+dacarma.co · github.com/Dcardona0512
 ```
 
 ## Español — para el perfil en español de LinkedIn
 
 ```
-Soy David Cardona Martínez, desarrollador full-stack, de Cali.
+Soy David Cardona Martínez, desarrollador full-stack, de Cali, Colombia.
 
-Construyo aplicaciones web completas, desde el esquema de la base de datos hasta la interfaz que alguien usa de verdad. Puedo llevar un producto de la idea a producción yo solo: modelar los datos, protegerlos, construir la interfaz, conectar autenticación y pagos, desplegarlo y mantenerlo funcionando.
+Construyo aplicaciones web de punta a punta: la base de datos, la interfaz, la autenticación, los pagos y dejarlo desplegado y funcionando. Lo he hecho solo, desde un repositorio vacío hasta algo en producción con usuarios reales.
 
-Algo de lo que sé hacer:
+Lo que eso implica:
 
-• Aplicaciones completas con TypeScript, React y Next.js
-• Diseñar una base de datos en PostgreSQL y seguir cambiándola con el tiempo sin romper lo que ya está
-• Mantener separados los datos de cada cliente para que uno nunca vea los del otro. Eso lo resuelvo con políticas en la base de datos y no en el código, porque en el código es más fácil equivocarse
-• Montar el acceso: por correo o con Google, Facebook y Apple
-• Conectar pagos y otros servicios: checkout, webhooks, suscripciones, tareas programadas
-• Armar la parte administrativa: inventario, pedidos, punto de venta, informes con gráficas, CRM
-• Que funcione en cualquier pantalla y se lea bien
-• Desplegar en Vercel con dominio propio y actualizaciones en cada push
+• Diseñar bases de datos relacionales y hacerlas evolucionar sin romper lo que ya está en producción
+• Mantener aislados los datos de cada cliente, impuesto en la base de datos y no en el código
+• Autenticación y permisos: correo, OAuth, sesiones, rutas protegidas
+• Pagos e integraciones con terceros: checkout, webhooks, suscripciones, tareas programadas
+• Paneles y herramientas internas con las que se opera un negocio de verdad
+• Interfaces que aguantan en cualquier pantalla y siguen siendo accesibles
 
-En el día a día trabajo con TypeScript, React, Next.js, PostgreSQL, Supabase, Tailwind CSS, Zod, Git y Vercel. También he trabajado con Firebase y Stripe.
+TypeScript, React, Next.js, PostgreSQL, Supabase, Tailwind CSS, Zod, Git, Vercel. También he trabajado con Firebase y Stripe.
 
-Nada de esto salió de tutoriales. Todo viene de productos que construí y que sigo manteniendo. Se pueden ver en mi sitio.
+Nada de esto salió de tutoriales. Viene de productos que construí y que sigo manteniendo, y están en mi sitio.
 
-Antes de esto me formé como piloto comercial. Sigo usando checklist para todo, que resultó ser una buena costumbre para programar.
+Antes del software me formé como piloto comercial. Sigo usando checklist para todo, que resultó ser una buena costumbre también para esto.
 
-Estoy en Cali, abierto a trabajo full-stack o frontend, remoto o presencial.
+Abierto a trabajo full-stack o frontend, remoto o en Cali.
 
-dacarma.co
-github.com/Dcardona0512
+dacarma.co · github.com/Dcardona0512
 ```
 
 ---
 
-## Sobre Firebase y Stripe
+## Qué cambié
 
-Los busqué en tus tres repos: **cero coincidencias**, ninguno de los dos. Tus
-pagos van por MercadoPago (`lib/mercadopago.ts` más el webhook) y tu backend es
-Supabase.
+**Las viñetas seguían siendo TUMARKET.** Aunque ya no lo nombraras, decían
+«inventario, pedidos, punto de venta, CRM» y «Google, Facebook y Apple»: esa es
+su lista de funciones. Un reclutador de una fintech o una agencia leía eso y
+pensaba «esto es de retail, no es lo mío».
 
-Por eso no los mezclé con el resto. La lista principal dice «en el día a día
-trabajo con…» y Firebase y Stripe van aparte, en «también he trabajado con».
-Esa distinción importa: si un entrevistador pregunta «¿qué hiciste con Stripe?»,
-la primera frase te compromete a un proyecto en producción y la segunda no.
+Ahora dicen la capacidad, no el producto:
 
-**Si los aprendiste antes o en algo que no está en GitHub, la frase es cierta y
-puedes dejarla tal cual.** Si no llegaste a usarlos de verdad, quítala: el resto
-del texto se sostiene solo, y una respuesta dudosa sobre Stripe hace que el
-entrevistador dude también de PostgreSQL y RLS, que sí dominas.
+| Antes | Ahora |
+|---|---|
+| «inventario, pedidos, punto de venta, CRM» | «paneles y herramientas internas con las que se opera un negocio» |
+| «correo, o con Google, Facebook y Apple» | «autenticación y permisos: correo, OAuth, sesiones, rutas protegidas» |
+| «desplegar en Vercel con dominio propio y actualizaciones en cada push» | fuera: es configuración, no capacidad |
 
-Es tu decisión, no la mía. Solo que la tomes sabiendo el riesgo.
+**Más corto.** De ~1.600 a ~1.050 caracteres. Quité la viñeta de despliegue
+(estaba en la lista de stack de todos modos) y comprimí la introducción. Cada
+viñeta cabe en una línea, que es como se escanea.
 
----
+**Añadí una prueba concreta:** «desde un repositorio vacío hasta algo en
+producción con usuarios reales». Es lo que separa tu perfil del de alguien que
+terminó un bootcamp, y es la frase que hace que un reclutador estricto siga
+leyendo.
 
-## Qué estaba mal en tu versión
-
-El arranque estaba bien. El problema era el cuerpo: pegaste el inventario
-técnico completo, y ese archivo era material de referencia para la sección de
-**Aptitudes**, no para el «Acerca de».
-
-- **Se leía como un `package.json`, no como una persona.** Seis líneas seguidas
-  de nombres separados por puntos medios. Nadie lee eso; se salta al siguiente
-  perfil.
-- **Referencias colgando.** Decía «TypeScript (all three projects)» y «SQL (73
-  migrations)», pero como quitamos los nombres de los proyectos, el lector no
-  sabe de qué tres proyectos hablas ni de dónde salen 73 migraciones.
-- **Herramientas internas que a nadie le importan al contratar:** `clsx`,
-  `tailwind-merge`, `lucide-react`. Restan, porque diluyen lo que sí pesa
-  (PostgreSQL, RLS, multi-tenancy) en una lista donde todo parece igual de
-  importante.
-- **Faltaba la mitad del texto:** la línea del piloto, la ubicación, la
-  disponibilidad y los enlaces.
-- **Se perdió el tono natural** que habíamos trabajado.
-
-Ahora las capacidades van en viñetas legibles y el stack en **una sola frase**
-al final, con los nombres que un reclutador reconoce. El inventario completo
-sigue en `stack.md`, que es de donde salen las 15 aptitudes de LinkedIn.
-
-Una última cosa: **quité «Claude Code» del texto.** En Aptitudes puede ir, pero
-en el «Acerca de» ocupa un sitio que rinde más con PostgreSQL, y hay
-reclutadores que lo leen como que la herramienta hizo el trabajo. Tú decides.
+**Recuperé dos cosas que borraste:** el enlace a `dacarma.co` —el texto dice
+«están en mi sitio», así que sin el enlace queda cojo— y la línea de
+disponibilidad, que es de lo primero que filtra un reclutador.
