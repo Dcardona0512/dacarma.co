@@ -12,16 +12,26 @@ los dos idiomas en el mismo campo se come el límite y parte la lectura.
 ## Inglés — pega esto en «About»
 
 ```
-I build and run products in production — not demos.
+I build complete web applications — from the database schema to the interface someone actually uses.
 
-TUMARKET (tumarket.co) is a multi-tenant SaaS I designed, built and operate on my own. Corner shops get an online storefront, a POS with cash closing, inventory with barcode scanning, order picking and sales reports. Behind it sits PostgreSQL on Supabase with row-level security on every table, 73 versioned migrations, per-store data isolation, MercadoPago subscriptions with webhooks, and sign-in through Google, Facebook and Apple. It serves real stores with real orders.
+I can take a product from an idea to something running in production on my own: model the data, secure it, build the interface, wire up authentication and payments, deploy it and keep it running.
 
-DCM ACCESS is a bilingual brokerage marketplace with its own CRM — leads, opportunities, deals, commissions and providers. A single codebase serves the public site and the CRM through Next.js route groups and a locale segment, with Zod validating every boundary.
+What I do:
 
-What I work with every day:
-TypeScript · React · Next.js (App Router) · PostgreSQL · Supabase · Tailwind CSS · Server Actions · REST APIs · Zod · Git · Vercel
+• Full applications in TypeScript, end to end — React and Next.js on the front, PostgreSQL behind it
+• Relational schemas designed from scratch and evolved safely through versioned migrations
+• Multi-tenant data isolation, so each client only ever reaches their own — enforced by database policies, not by application code
+• Authentication: email, OAuth with Google, Facebook and Apple, sessions and protected routes
+• Payments and third-party integrations: checkout, webhooks, subscriptions with renewal and expiry, scheduled jobs
+• Admin panels and dashboards: inventory, orders, point of sale, reporting with charts, CRM
+• Interfaces that work on any screen, load fast and meet WCAG contrast
+• Deployment and operation on Vercel — custom domains, continuous delivery from Git
 
-I care most about the parts nobody notices when they work: access policies that actually hold, migrations you can replay from zero, forms that validate on the server, contrast that passes WCAG.
+Stack: TypeScript · React · Next.js (App Router) · PostgreSQL · Supabase · Tailwind CSS · Server Actions · REST APIs · Zod · Git · Vercel
+
+I've proven all of it on my own products, both live: TUMARKET (tumarket.co), a multi-tenant SaaS for grocery stores, and DCM ACCESS, a bilingual marketplace with its own CRM.
+
+I care most about the parts nobody notices when they work: access policies that actually hold, migrations you can replay from zero, forms that validate on the server.
 
 Before software I trained as a Commercial Pilot. That's where I learned to run the checklist even when I'm certain, and to verify before committing. It transfers better than you'd expect.
 
@@ -34,16 +44,26 @@ GitHub → github.com/Dcardona0512
 ## Español — para el perfil en español de LinkedIn
 
 ```
-Construyo y opero productos en producción, no demos.
+Construyo aplicaciones web completas: desde el esquema de la base de datos hasta la interfaz que alguien usa de verdad.
 
-TUMARKET (tumarket.co) es un SaaS multi-tienda que diseñé, construí y opero yo solo. Las tiendas de barrio obtienen escaparate en línea, POS con cierre de caja, inventario con lector de códigos de barras, alistamiento de pedidos e informes de ventas. Debajo hay PostgreSQL en Supabase con seguridad a nivel de fila en todas las tablas, 73 migraciones versionadas, aislamiento de datos por tienda, suscripciones con MercadoPago y webhooks, y acceso con Google, Facebook y Apple. Está en producción con tiendas y pedidos reales.
+Puedo llevar un producto de la idea a producción yo solo: modelar los datos, protegerlos, construir la interfaz, conectar autenticación y pagos, desplegarlo y mantenerlo funcionando.
 
-DCM ACCESS es un marketplace bilingüe de brokerage con CRM propio: leads, oportunidades, negocios, comisiones y proveedores. Un solo código sirve el sitio público y el CRM mediante route groups de Next.js y segmento de idioma, con Zod validando cada frontera.
+Lo que hago:
 
-Con lo que trabajo a diario:
-TypeScript · React · Next.js (App Router) · PostgreSQL · Supabase · Tailwind CSS · Server Actions · APIs REST · Zod · Git · Vercel
+• Aplicaciones completas en TypeScript, de punta a punta — React y Next.js al frente, PostgreSQL detrás
+• Esquemas relacionales diseñados desde cero y evolucionados con migraciones versionadas
+• Aislamiento de datos multi-cliente, para que cada uno solo alcance los suyos — impuesto por políticas de base de datos, no por lógica de aplicación
+• Autenticación: correo, OAuth con Google, Facebook y Apple, sesiones y rutas protegidas
+• Pagos e integraciones con terceros: checkout, webhooks, suscripciones con renovación y vencimiento, tareas programadas
+• Paneles de administración: inventario, pedidos, punto de venta, informes con gráficas, CRM
+• Interfaces que funcionan en cualquier pantalla, cargan rápido y cumplen el contraste WCAG
+• Despliegue y operación en Vercel: dominios propios y entrega continua desde Git
 
-Me importan las partes que nadie nota cuando funcionan: políticas de acceso que aguantan, migraciones que se reproducen desde cero, validación en el servidor y contraste que cumple WCAG.
+Stack: TypeScript · React · Next.js (App Router) · PostgreSQL · Supabase · Tailwind CSS · Server Actions · APIs REST · Zod · Git · Vercel
+
+Todo esto lo he demostrado en mis propios productos, ambos en producción: TUMARKET (tumarket.co), un SaaS multi-tienda para tiendas de barrio, y DCM ACCESS, un marketplace bilingüe con CRM propio.
+
+Me importan las partes que nadie nota cuando funcionan: políticas de acceso que aguantan, migraciones que se reproducen desde cero y validación en el servidor.
 
 Antes del software me formé como Piloto Comercial. De ahí me traje la costumbre de seguir el procedimiento aunque esté seguro, y de verificar antes de decidir.
 
@@ -57,19 +77,21 @@ GitHub → github.com/Dcardona0512
 
 ## Por qué está escrito así
 
-- **La primera línea es la única que se ve garantizada.** «I build and run
-  products in production — not demos» funciona sola y da una razón para pulsar
-  «ver más». Empezar con «Soy David, apasionado por la tecnología…» desperdicia
-  el único espacio que todos leen.
-- **Producto antes que stack.** Primero lo que existe y funciona; la lista de
-  tecnologías después, como respaldo. Al revés es un currículum de curso.
-- **Cifras concretas.** «73 migraciones versionadas» y «RLS en todas las tablas»
-  se pueden verificar y comprobar en una entrevista. «Amplio conocimiento» no.
+- **Capacidades primero, proyectos como prueba.** Un reclutador no contrata
+  TUMARKET: contrata a quien pueda hacer *lo suyo*. Por eso el cuerpo del texto
+  es lo que sabes hacer, y los productos aparecen al final como respaldo de que
+  no es teoría. Al revés se lee como la ficha de un producto.
+- **La primera línea es la única que se ve garantizada.** LinkedIn corta a las
+  3 primeras líneas. «Construyo aplicaciones web completas, desde el esquema de
+  la base de datos hasta la interfaz» dice tu alcance de una vez. Empezar con
+  «Soy David, apasionado por la tecnología» desperdicia ese espacio.
+- **Cada viñeta es transferible.** Están escritas como capacidades («aislamiento
+  de datos multi-cliente»), no como anécdotas de un proyecto («las tiendas de
+  TUMARKET»). Así encajan en cualquier oferta, no solo en una de retail.
+- **Todo es verificable.** Cada punto sale de código tuyo: las migraciones y el
+  RLS de tu proyecto de Supabase, los webhooks y el cron de TUMARKET, el CRM de
+  DCM ACCESS, el contraste WCAG de dacarma.co.
 - **Sin adjetivos sobre ti mismo.** Nada de «creativo», «apasionado» o
-  «autodidacta»: el reclutador los descuenta porque los escribe todo el mundo.
-  Lo que construiste habla mejor.
+  «autodidacta»: los escribe todo el mundo y el reclutador los descuenta.
 - **El piloto, una vez y al final.** Es el gancho que te separa de mil perfiles
   de React. Repetirlo hace dudar de tu compromiso con el desarrollo.
-- **Palabras clave donde importan.** TypeScript, React, Next.js, PostgreSQL y
-  Supabase aparecen en texto corrido: es lo que indexa el buscador de
-  reclutadores de LinkedIn.
