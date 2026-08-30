@@ -11,9 +11,9 @@ idioma*, arriba a la derecha de tu perfil.
 ## Inglés — pega esto en «About»
 
 ```
-I'm a full-stack developer from Cali, Colombia.
+I'm David Cardona Martínez, a full-stack developer from Cali, Colombia.
 
-I like building things people actually use, and along the way I learned to handle the whole thing myself: the database, the interface, the login, the payments, and getting it deployed and kept alive.
+I build complete web applications, from the database schema to the interface someone actually uses. I can take a product from an idea to something running in production on my own: model the data, secure it, build the interface, wire up authentication and payments, deploy it and keep it running.
 
 Some of what I can do:
 
@@ -25,6 +25,8 @@ Some of what I can do:
 • Build the admin side: inventory, orders, point of sale, reports with charts, CRM
 • Make it work on any screen and stay readable for everyone
 • Deploy on Vercel with a custom domain and updates on every push
+
+Day to day I work with TypeScript, React, Next.js, PostgreSQL, Supabase, Tailwind CSS, Zod, Git and Vercel. I've also worked with Firebase and Stripe.
 
 None of that comes from tutorials. It's all from products I built and still keep running. You can see them on my site.
 
@@ -39,9 +41,9 @@ github.com/Dcardona0512
 ## Español — para el perfil en español de LinkedIn
 
 ```
-Soy desarrollador full-stack, de Cali.
+Soy David Cardona Martínez, desarrollador full-stack, de Cali.
 
-Me gusta construir cosas que la gente use de verdad, y con el tiempo aprendí a hacerme cargo de todo: la base de datos, la interfaz, el acceso, los pagos y dejarlo funcionando en producción.
+Construyo aplicaciones web completas, desde el esquema de la base de datos hasta la interfaz que alguien usa de verdad. Puedo llevar un producto de la idea a producción yo solo: modelar los datos, protegerlos, construir la interfaz, conectar autenticación y pagos, desplegarlo y mantenerlo funcionando.
 
 Algo de lo que sé hacer:
 
@@ -53,6 +55,8 @@ Algo de lo que sé hacer:
 • Armar la parte administrativa: inventario, pedidos, punto de venta, informes con gráficas, CRM
 • Que funcione en cualquier pantalla y se lea bien
 • Desplegar en Vercel con dominio propio y actualizaciones en cada push
+
+En el día a día trabajo con TypeScript, React, Next.js, PostgreSQL, Supabase, Tailwind CSS, Zod, Git y Vercel. También he trabajado con Firebase y Stripe.
 
 Nada de esto salió de tutoriales. Todo viene de productos que construí y que sigo manteniendo. Se pueden ver en mi sitio.
 
@@ -66,37 +70,50 @@ github.com/Dcardona0512
 
 ---
 
-## Sobre quitar los proyectos
+## Sobre Firebase y Stripe
 
-Los nombres ya no están. Pero dejé una frase corta —«Nada de esto salió de
-tutoriales. Todo viene de productos que construí y que sigo manteniendo»— porque
-sin ella la lista de viñetas se queda como afirmaciones sueltas, iguales a las
-de cualquier perfil recién salido de un curso. Esa línea la separa de eso sin
-repetir lo que ya se ve en el portafolio.
+Los busqué en tus tres repos: **cero coincidencias**, ninguno de los dos. Tus
+pagos van por MercadoPago (`lib/mercadopago.ts` más el webhook) y tu backend es
+Supabase.
 
-**Donde sí conviene que aparezcan con nombre:**
+Por eso no los mezclé con el resto. La lista principal dice «en el día a día
+trabajo con…» y Firebase y Stripe van aparte, en «también he trabajado con».
+Esa distinción importa: si un entrevistador pregunta «¿qué hiciste con Stripe?»,
+la primera frase te compromete a un proyecto en producción y la segunda no.
 
-- **Sección «Proyectos» de LinkedIn.** Ahí es donde los busca el reclutador, con
-  enlace en vivo. Está en la guía.
-- **Sección «Experiencia».** Las viñetas de DACARMA sí los detallan, y es lo que
-  el reclutador lee después del «Acerca de».
-- **«Destacado».** Fija ahí tumarket.co con una captura del panel.
-- **El CV.** Ahí no se pueden omitir: es el documento que se lee sin navegar.
+**Si los aprendiste antes o en algo que no está en GitHub, la frase es cierta y
+puedes dejarla tal cual.** Si no llegaste a usarlos de verdad, quítala: el resto
+del texto se sostiene solo, y una respuesta dudosa sobre Stripe hace que el
+entrevistador dude también de PostgreSQL y RLS, que sí dominas.
 
-Así el «Acerca de» dice quién eres y qué haces, y el detalle vive donde
-corresponde en vez de repetirse tres veces.
+Es tu decisión, no la mía. Solo que la tomes sabiendo el riesgo.
 
 ---
 
-## Por qué está escrito así
+## Qué estaba mal en tu versión
 
-- **La primera línea es la única garantizada.** LinkedIn corta a las 3 primeras
-  antes del «ver más».
-- **Capacidades, no anécdotas.** Escritas para que encajen en cualquier oferta.
-- **Nada de adjetivos sobre ti mismo.** «Creativo», «apasionado» o
-  «autodidacta» los escribe todo el mundo y el reclutador los descuenta.
-- **El piloto, una vez y al final.** Es lo que te hace memorable; repetirlo hace
-  dudar de tu compromiso con el desarrollo.
-- **Inglés sencillo a propósito.** Se parece más al que vas a hablar en la
-  entrevista. Un texto escrito como artículo de revista crea una expectativa que
-  luego toca sostener en una llamada.
+El arranque estaba bien. El problema era el cuerpo: pegaste el inventario
+técnico completo, y ese archivo era material de referencia para la sección de
+**Aptitudes**, no para el «Acerca de».
+
+- **Se leía como un `package.json`, no como una persona.** Seis líneas seguidas
+  de nombres separados por puntos medios. Nadie lee eso; se salta al siguiente
+  perfil.
+- **Referencias colgando.** Decía «TypeScript (all three projects)» y «SQL (73
+  migrations)», pero como quitamos los nombres de los proyectos, el lector no
+  sabe de qué tres proyectos hablas ni de dónde salen 73 migraciones.
+- **Herramientas internas que a nadie le importan al contratar:** `clsx`,
+  `tailwind-merge`, `lucide-react`. Restan, porque diluyen lo que sí pesa
+  (PostgreSQL, RLS, multi-tenancy) en una lista donde todo parece igual de
+  importante.
+- **Faltaba la mitad del texto:** la línea del piloto, la ubicación, la
+  disponibilidad y los enlaces.
+- **Se perdió el tono natural** que habíamos trabajado.
+
+Ahora las capacidades van en viñetas legibles y el stack en **una sola frase**
+al final, con los nombres que un reclutador reconoce. El inventario completo
+sigue en `stack.md`, que es de donde salen las 15 aptitudes de LinkedIn.
+
+Una última cosa: **quité «Claude Code» del texto.** En Aptitudes puede ir, pero
+en el «Acerca de» ocupa un sitio que rinde más con PostgreSQL, y hay
+reclutadores que lo leen como que la herramienta hizo el trabajo. Tú decides.
