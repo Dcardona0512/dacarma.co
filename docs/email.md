@@ -36,7 +36,22 @@ Cloudflare → **Compute → Email Service → Email Routing** → elige `dacarm
 > Atajo directo: `https://dash.cloudflare.com/<tu-cuenta>/email-service/routing`
 > — fíjate en que la ruta no lleva el dominio en medio.
 
-Pulsa **Enable / Get started**.
+Pulsa **+ Onboard Domain** y elige .
+
+### 1.1b Si dice «Existing non-Cloudflare MX records conflict»
+
+Cloudflare no pisa registros MX ajenos. Ve a **dacarma.co → DNS → Records** y
+borra **seis** registros antes de reintentar:
+
+- Los **5 MX** que apuntan a - El **TXT** 
+No se pierde nada: ese reenvío está muerto desde que el DNS pasó a Cloudflare,
+así que el dominio ya no recibía correo por ningún lado.
+
+Borra el SPF **antes** del onboarding, no después: Cloudflare añade el suyo
+durante el proceso, y así no hay ventana en la que existan dos.
+
+> ⚠️ En esa misma pantalla están los registros **A** de  (Vercel) y
+> el **CNAME** de . No los toques o tumbas el sitio.
 
 ### 1.2 Aceptar el cambio de MX
 
