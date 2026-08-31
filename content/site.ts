@@ -147,7 +147,6 @@ export const site = {
     heading: "Let's have a chat!",
     body: "Enter your details below and I'll get back to you as soon as possible.",
     visual: "/images/services-visual.png",
-    budgets: ["Select Budget", "Up to $2,000", "$2,000 - $5,000", "$10,000 +"],
     submitLabel: "Submit",
     successMessage:
       "Thanks — your message is on its way. I'll be in touch soon.",

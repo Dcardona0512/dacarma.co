@@ -73,29 +73,10 @@ export function ContactForm() {
         />
       </label>
 
+      {/* Asked for instead of a website: plenty of prospects don't have one. */}
       <label className="flex flex-col gap-2">
-        <span className={LABEL}>Website URL</span>
-        <input
-          name="website"
-          type="url"
-          placeholder="https://parker.com"
-          className={FIELD}
-        />
-      </label>
-
-      <label className="flex flex-col gap-2">
-        <span className={LABEL}>What&apos;s your budget?</span>
-        <select
-          name="budget"
-          defaultValue={contact.budgets[0]}
-          className={`${FIELD} p-3 [&>option]:bg-surface [&>option]:text-offwhite`}
-        >
-          {contact.budgets.map((budget) => (
-            <option key={budget} value={budget}>
-              {budget}
-            </option>
-          ))}
-        </select>
+        <span className={LABEL}>Company name</span>
+        <input name="company" placeholder="Daily Bugle" className={FIELD} />
       </label>
 
       <label className="flex flex-col gap-2">
@@ -109,10 +90,12 @@ export function ContactForm() {
         />
       </label>
 
-      {/* Honeypot: invisible to people, irresistible to bots. */}
+      {/* Honeypot: invisible to people, irresistible to bots. Named _gotcha
+          rather than a real-sounding field, so it can't collide with one and
+          browsers never autofill it. */}
       <input
         type="text"
-        name="company"
+        name="_gotcha"
         tabIndex={-1}
         autoComplete="off"
         aria-hidden="true"

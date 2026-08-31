@@ -7,11 +7,10 @@ type Payload = {
   firstName?: string;
   lastName?: string;
   email?: string;
-  website?: string;
-  budget?: string;
+  company?: string;
   message?: string;
   /** Honeypot — always empty for real people. */
-  company?: string;
+  _gotcha?: string;
 };
 
 const MAX_LENGTH = 5000;
@@ -33,14 +32,13 @@ export async function POST(request: Request) {
   }
 
   // Silently accept honeypot hits so bots get no signal to adapt to.
-  if (body.company) return NextResponse.json({ ok: true });
+  if (body._gotcha) return NextResponse.json({ ok: true });
 
   const firstName = body.firstName?.trim() ?? "";
   const lastName = body.lastName?.trim() ?? "";
   const email = body.email?.trim() ?? "";
   const message = body.message?.trim() ?? "";
-  const website = body.website?.trim() ?? "";
-  const budget = body.budget?.trim() ?? "";
+  const company = body.company?.trim() ?? "";
 
   if (!firstName || !lastName || !email || !message) {
     return NextResponse.json(
@@ -95,8 +93,7 @@ export async function POST(request: Request) {
       <h2>New portfolio enquiry</h2>
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-      ${website ? `<p><strong>Website:</strong> ${escapeHtml(website)}</p>` : ""}
-      ${budget ? `<p><strong>Budget:</strong> ${escapeHtml(budget)}</p>` : ""}
+      ${company ? `<p><strong>Company:</strong> ${escapeHtml(company)}</p>` : ""}
       <p><strong>Message:</strong></p>
       <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
     `,
