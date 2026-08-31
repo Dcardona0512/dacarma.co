@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // A standalone Node script for generating the CV PDFs — CommonJS on
+    // purpose, and not part of the app the Next rules are written for.
+    "career/**",
   ]),
 ]);
 

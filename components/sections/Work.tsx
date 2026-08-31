@@ -1,32 +1,49 @@
+import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/content/site";
 import { ArrowUpRightIcon } from "@/components/icons";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Project } from "@/content/site";
 
+const CARD =
+  "group relative flex aspect-[524/394] w-full flex-col justify-end overflow-hidden rounded-[48px] bg-surface p-8";
+
 function ProjectCard({ project }: { project: Project }) {
-  return (
-    <a
-      href={project.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative flex aspect-[524/394] w-full flex-col justify-end overflow-hidden rounded-[48px] bg-surface p-8"
-    >
+  const inner = (
+    <>
       {/* The artwork dissolves into the card's own background between 50% and
           83.6% of its height. That fade — not a baked-in gradient — is what
           gives the title and description something dark to sit on. */}
-      <span className="pointer-events-none absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.07] [mask-image:linear-gradient(#000_50%,transparent_83.5916%)]">
-        <Image
-          src={project.image}
-          alt={`${project.title} — ${project.description}`}
-          fill
-          sizes="(min-width: 1200px) 524px, 100vw"
-          className="object-cover"
-        />
-      </span>
+      {project.image ? (
+        <span className="pointer-events-none absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.07] [mask-image:linear-gradient(#000_50%,transparent_83.5916%)]">
+          <Image
+            src={project.image}
+            alt={`${project.title} — ${project.description}`}
+            fill
+            sizes="(min-width: 1200px) 524px, 100vw"
+            className="object-cover"
+          />
+        </span>
+      ) : (
+        /* An open slot: a faint plus on empty space, so the grid stays whole
+           without pretending there is work here that isn't. */
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 bottom-[38%] flex items-center justify-center"
+        >
+          <span className="text-[44px] leading-none font-medium text-white/[0.09] transition-colors duration-500 group-hover:text-white/[0.16]">
+            +
+          </span>
+        </span>
+      )}
 
-      {/* Hairline border, itself fading out toward the bottom. */}
-      <span className="pointer-events-none absolute inset-0 z-[1] rounded-[48px] border border-[var(--hairline)] [mask-image:linear-gradient(#000_0%,rgba(0,0,0,0.16)_82.8442%)]" />
+      {/* Hairline border, itself fading out toward the bottom. Dashed on an
+          empty slot — the same cue a blank field uses everywhere else. */}
+      <span
+        className={`pointer-events-none absolute inset-0 z-[1] rounded-[48px] border border-[var(--hairline)] [mask-image:linear-gradient(#000_0%,rgba(0,0,0,0.16)_82.8442%)] ${
+          project.placeholder ? "border-dashed" : ""
+        }`}
+      />
 
       <div className="relative z-[2] flex w-full flex-col justify-center gap-2">
         <div className="flex w-full items-center justify-start gap-3">
@@ -39,6 +56,26 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <p className="t-body-sm">{project.description}</p>
       </div>
+    </>
+  );
+
+  // Open slots point at the contact page, so an empty card still does work.
+  if (project.placeholder) {
+    return (
+      <Link href={project.href} className={CARD}>
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={CARD}
+    >
+      {inner}
     </a>
   );
 }

@@ -11,8 +11,11 @@ export type HeadingSegment = {
 export type Project = {
   title: string;
   description: string;
-  image: string;
+  /** Omitted on placeholder cards, which render an empty slot instead. */
+  image?: string;
   href: string;
+  /** An open slot for work still to come, rather than a finished project. */
+  placeholder?: boolean;
 };
 
 export type SocialLink = {
@@ -83,28 +86,27 @@ export const site = {
   work: [
     {
       title: "TUMARKET.CO",
-      description:
-        "Online ordering platform for local markets & grocery stores.",
+      description: "Online ordering platform for local markets & grocery stores.",
       image: "/images/work-tumarket.png",
       href: "https://www.tumarket.co/",
     },
     {
-      title: "Scalable",
-      description: "Landing Page for an analytics & sales SaaS business.",
-      image: "/images/work-scalable.jpg",
-      href: "https://www.hxmzaehsan.com/templates/scalable",
+      title: "DCM ACCESS",
+      description: "Bilingual brokerage marketplace with an in-house CRM.",
+      image: "/images/work-dcm.png",
+      href: "https://dcmxaccess.vercel.app/",
     },
     {
-      title: "Limitless",
-      description: "Landing page for a design subscription service.",
-      image: "/images/work-limitless.jpg",
-      href: "https://www.hxmzaehsan.com/templates/limitless",
+      title: "Available",
+      description: "A slot for the next project. Yours could go here.",
+      href: "/contact",
+      placeholder: true,
     },
     {
-      title: "Solopreneur",
-      description: "Website for a freelance web designer & digital creator.",
-      image: "/images/work-solopreneur.jpg",
-      href: "https://www.framer.com/marketplace/templates/solopreneur/",
+      title: "Available",
+      description: "A slot for the next project. Yours could go here.",
+      href: "/contact",
+      placeholder: true,
     },
   ] satisfies Project[],
 
