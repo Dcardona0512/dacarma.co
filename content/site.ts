@@ -98,13 +98,13 @@ export const site = {
     },
     {
       title: "Available",
-      description: "A slot for the next project. Yours could go here.",
+      description: "Currently available for new projects. Let's talk.",
       href: "/contact",
       placeholder: true,
     },
     {
       title: "Available",
-      description: "A slot for the next project. Yours could go here.",
+      description: "Currently available for new projects. Let's talk.",
       href: "/contact",
       placeholder: true,
     },
