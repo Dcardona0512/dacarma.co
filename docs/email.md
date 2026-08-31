@@ -43,15 +43,17 @@ Pulsa **+ Onboard Domain** y elige .
 Cloudflare no pisa registros MX ajenos. Ve a **dacarma.co → DNS → Records** y
 borra **seis** registros antes de reintentar:
 
-- Los **5 MX** que apuntan a - El **TXT** 
+- Los **5 MX** que apuntan a `eforward1..5.registrar-servers.com`
+- El **TXT** `v=spf1 include:spf.efwd.registrar-servers.com ~all`
+
 No se pierde nada: ese reenvío está muerto desde que el DNS pasó a Cloudflare,
 así que el dominio ya no recibía correo por ningún lado.
 
 Borra el SPF **antes** del onboarding, no después: Cloudflare añade el suyo
 durante el proceso, y así no hay ventana en la que existan dos.
 
-> ⚠️ En esa misma pantalla están los registros **A** de  (Vercel) y
-> el **CNAME** de . No los toques o tumbas el sitio.
+> ⚠️ En esa misma pantalla están los registros **A** de `dacarma.co` (los de
+> Vercel) y el **CNAME** de `www`. No los toques o tumbas el sitio.
 
 ### 1.2 Aceptar el cambio de MX
 
