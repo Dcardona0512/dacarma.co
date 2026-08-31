@@ -1,112 +1,198 @@
-# Correo con el dominio: hi@dacarma.co
+# Correo del dominio — paso a paso
 
-## Situación
+Objetivo: **recibir** en `hi@dacarma.co` y que el **formulario de contacto**
+envíe de verdad, con el dominio bien autenticado para que nada caiga en spam.
 
-El DNS de `dacarma.co` está delegado a Cloudflare (`harvey` y `meg.ns.
-cloudflare.com`). En la zona hay unos registros MX que apuntan al reenvío de
-Namecheap:
+## Punto de partida
+
+Esto es lo que hay en el DNS ahora mismo:
 
 ```
-MX   10 eforward1.registrar-servers.com   (y eforward2..5)
-TXT  v=spf1 include:spf.efwd.registrar-servers.com ~all
+MX    eforward1..5.registrar-servers.com        ← huérfanos, de Namecheap
+TXT   v=spf1 include:spf.efwd.registrar-servers.com ~all   ← apunta a un servicio que ya no usas
+DMARC (ninguno)
+DKIM  (ninguno)
 ```
 
-**Esos registros están huérfanos.** El reenvío de Namecheap solo funciona si el
-dominio usa los nameservers de Namecheap; al mover el DNS a Cloudflare dejó de
-poder configurarse, y los MX se quedaron copiados en la zona sin nada detrás.
+Los MX de Namecheap no funcionan porque su reenvío exige los nameservers de
+Namecheap, y `dacarma.co` los tiene en Cloudflare. Por eso el panel te marca
+**SPF: Soft fail** y **DKIM: Fail**.
 
-Se resuelve con **Cloudflare Email Routing**: gratis, en el mismo panel donde ya
-manejas el dominio, y sin límite de alias.
+Cada paso lleva una comprobación. **No pases al siguiente sin que la anterior dé
+lo esperado** — en DNS los errores se acumulan y luego cuesta saber cuál fue.
 
 ---
 
-## Paso 1 — Activar Email Routing (gratis)
+# Parte 1 · Recibir en hi@dacarma.co
 
-1. Cloudflare → **Compute → Email Service → Email Routing**, y ahí eliges
-   **dacarma.co**.
+### 1.1 Activar Email Routing
 
-   > Ojo: **no** está en el menú **Email** de la zona. Ese solo tiene DMARC
-   > Management y Email Security. Cloudflare movió Email Routing al nivel de
-   > cuenta, bajo Compute.
+Cloudflare → **Compute → Email Service → Email Routing** → elige `dacarma.co`.
 
-2. **Get started / Enable.**
-3. Cloudflare te va a avisar de que **reemplaza los registros MX existentes**.
-   Acepta: los de Namecheap no sirven de nada. Añade los suyos:
-   ```
-   MX  route1.mx.cloudflare.net   (prioridad 2)
-   MX  route2.mx.cloudflare.net   (prioridad 12)
-   MX  route3.mx.cloudflare.net   (prioridad 98)
-   TXT v=spf1 include:_spf.mx.cloudflare.net ~all
-   ```
-4. **Destination address:** añade `dcardona0512@gmail.com`. Cloudflare te manda
-   un correo de verificación — hay que abrirlo y confirmar.
-5. **Custom address:** crea `hi@dacarma.co` → destino tu Gmail verificado.
-6. Manda un correo de prueba a `hi@dacarma.co` desde otra cuenta.
+> No está en el menú **Email** de la zona: ahí solo hay DMARC Management y
+> Email Security. Cloudflare lo movió al nivel de cuenta, bajo Compute.
 
-### Comprueba que quede un solo SPF
+Pulsa **Enable / Get started**.
 
-Después de activarlo, en **DNS → Records** filtra por `TXT` y asegúrate de que
-**no queden dos registros que empiecen por `v=spf1`**. Si sigue el viejo de
-Namecheap, bórralo: dos SPF se invalidan entre sí y el correo empieza a caer en
-spam. Debe quedar solo el de Cloudflare.
+### 1.2 Aceptar el cambio de MX
 
----
+Te avisará de que va a reemplazar los MX. **Acepta.** Los de Namecheap están
+muertos. Deja estos:
 
-## Paso 2 — El problema de responder
+```
+MX  route1.mx.cloudflare.net   prioridad 2
+MX  route2.mx.cloudflare.net   prioridad 12
+MX  route3.mx.cloudflare.net   prioridad 98
+```
 
-El detalle que casi todo el mundo pasa por alto:
+### 1.3 Verificar tu Gmail como destino
 
-> Email Routing **solo recibe**. Si un reclutador escribe a `hi@dacarma.co` y tú
-> respondes, el correo sale desde `dcardona0512@gmail.com`.
+**Destination addresses** → *Add* → `dcardona0512@gmail.com`.
+Cloudflare manda un correo de confirmación: ábrelo y pulsa el enlace. Hasta que
+no lo confirmes, no reenvía nada.
 
-Para un CV eso resta: das una dirección profesional y contestas desde otra.
+### 1.4 Crear la dirección
 
-Gmail tiene *«Enviar como»* (Configuración → Cuentas e importación), pero exige
-un **servidor SMTP del dominio**, y ni Cloudflare Email Routing ni el reenvío de
-Namecheap lo dan. Opciones reales:
+**Routing rules** → *Create address*:
 
-| Opción | Coste | Qué resuelve |
+| Custom address | Action | Destination |
 |---|---|---|
-| **Cloudflare Email Routing** (paso 1) | Gratis | Recibes. Respondes desde Gmail. |
-| **Zoho Mail Lite** | ~1 USD/mes | Buzón real con IMAP/SMTP. Se integra en Gmail con *Enviar como*. Reemplaza los MX. |
-| **Google Workspace** | ~7 USD/mes | Todo dentro de Gmail, sin configurar nada. |
+| `hi@dacarma.co` | Send to an email | `dcardona0512@gmail.com` |
 
-> El plan **gratuito** de Zoho ya no incluye IMAP/SMTP, así que no sirve para
-> responder desde Gmail. Si vas por Zoho, tiene que ser el de pago.
+Es gratis y sin límite, así que puedes añadir `contacto@` o `david@` después.
 
-**Recomendación:** haz el paso 1 hoy — gratis e inmediato, y ya puedes poner
-`hi@dacarma.co` en el CV. Cuando empieces a recibir correo de reclutadores, pasa
-a Zoho Mail Lite; por un dólar al mes se cierra el detalle.
+### 1.5 Limpiar el SPF viejo
 
-**Mientras tanto**, en Gmail → Configuración → General → **Firma**, pon
-`hi@dacarma.co`. No arregla el remitente, pero deja claro cuál es tu dirección.
+**DNS → Records**, filtra por `TXT`. Tiene que quedar **un solo** registro que
+empiece por `v=spf1`. Si sigue el de Namecheap
+(`include:spf.efwd.registrar-servers.com`), **bórralo**. Dos SPF se invalidan
+entre sí.
+
+De momento debe quedar solo:
+
+```
+v=spf1 include:_spf.mx.cloudflare.net ~all
+```
+
+### ✅ Comprobación 1
+
+Mándate un correo a `hi@dacarma.co` desde otra cuenta (no desde tu propio
+Gmail). Debe llegar a tu bandeja. Avísame y verifico el DNS por mi lado.
 
 ---
 
-## Paso 3 — Cuidado al configurar Resend
+# Parte 2 · Que el formulario envíe (Resend)
 
-El formulario de contacto sigue devolviendo 500 porque faltan las claves de
-Resend. Cuando lo configures, Resend pedirá registros DNS para poder **enviar**
-desde el dominio, y ahí está la trampa:
+### 2.1 Crear la cuenta y el dominio
 
-> Ya vas a tener el SPF de Cloudflare Email Routing. Si añades el de Resend como
-> un TXT nuevo, quedan **dos SPF** y se invalidan los dos.
+1. Regístrate en **resend.com** (plan gratis: 3.000 correos/mes).
+2. **Domains → Add Domain** → `dacarma.co`.
+3. Te dará entre 2 y 3 registros DNS. Anótalos.
 
-Hay que **fusionarlos en uno**:
+### 2.2 Añadir el DKIM
+
+Resend te da algo como `resend._domainkey` con un valor largo. Añádelo en
+Cloudflare **tal cual**, como TXT. Este no choca con nada.
+
+> En Cloudflare, pon la nube en **gris (DNS only)** para todo lo de correo.
+> Naranja es proxy HTTP y no aplica.
+
+### 2.3 Fusionar el SPF — aquí está la trampa
+
+Resend te pedirá un SPF. **No lo añadas como registro nuevo**: ya tendrás el de
+Cloudflare del paso 1.5, y dos SPF invalidan el dominio entero.
+
+**Edita el que existe** y mete los dos `include`:
 
 ```
 v=spf1 include:_spf.mx.cloudflare.net include:amazonses.com ~all
 ```
 
 Un solo `v=spf1`, un solo `~all` al final. Confirma el `include` exacto que te
-dé Resend. Los DKIM sí van como registros aparte, esos no chocan.
+muestre Resend (suele ser `amazonses.com`).
+
+### 2.4 Verificar en Resend
+
+Vuelve a Resend y pulsa **Verify**. Puede tardar unos minutos.
+
+### 2.5 Poner las claves en Vercel
+
+Vercel → proyecto **dacarma-co** → **Settings → Environment Variables**:
+
+| Variable | Valor |
+|---|---|
+| `RESEND_API_KEY` | La clave de Resend (empieza por `re_`) |
+| `CONTACT_TO_EMAIL` | `hi@dacarma.co` |
+| `CONTACT_FROM_EMAIL` | `Portfolio <hi@dacarma.co>` |
+
+Marca los tres para **Production**. Después **Deployments → Redeploy**, porque
+las variables solo se leen al construir.
+
+### ✅ Comprobación 2
+
+Entra a `dacarma.co/contact`, manda un mensaje de prueba y mira que te llegue.
+Yo puedo comprobar que la API deje de devolver 500.
 
 ---
 
-## Cuando funcione
+# Parte 3 · Cerrar con DMARC
 
-Avísame y actualizo `hi@dacarma.co` en:
+Con SPF y DKIM en pie, DMARC le dice a los servidores qué hacer si algo no
+cuadra. Sin él, cualquiera puede falsificar tu dominio.
 
-- `career/templates/cv-es.html` y `cv-en.html` (y regenero los PDF)
-- `career/linkedin-about.md`
-- `CONTACT_TO_EMAIL` en Vercel
+**DNS → Records → Add record:**
+
+| Campo | Valor |
+|---|---|
+| Type | `TXT` |
+| Name | `_dmarc` |
+| Content | `v=DMARC1; p=none; rua=mailto:hi@dacarma.co` |
+
+`p=none` significa «solo obsérvalo y repórtame». Es lo correcto al empezar:
+recibes informes sin arriesgarte a que se bloquee correo legítimo.
+
+Al cabo de dos o tres semanas sin problemas, súbelo a `p=quarantine` y más
+adelante a `p=reject`.
+
+### ✅ Comprobación 3
+
+El panel de **DMARC Management** debería pasar de `N/A` a mostrar tu política, y
+SPF de *Soft fail* a *Pass*.
+
+---
+
+# Parte 4 · Responder desde hi@dacarma.co
+
+El detalle que casi nadie prevé:
+
+> Email Routing **solo recibe**. Si un reclutador escribe a `hi@dacarma.co` y
+> respondes, el correo sale desde `dcardona0512@gmail.com`.
+
+Para un CV eso resta. Gmail tiene *Enviar como*, pero exige **SMTP del
+dominio**, y ni Cloudflare ni el reenvío lo dan.
+
+| Opción | Coste | Qué resuelve |
+|---|---|---|
+| Solo Email Routing | Gratis | Recibes; respondes desde Gmail |
+| **Zoho Mail Lite** | ~1 USD/mes | Buzón real con IMAP/SMTP; se integra en Gmail |
+| Google Workspace | ~7 USD/mes | Todo nativo en Gmail |
+
+> El plan **gratuito** de Zoho ya no trae IMAP/SMTP, así que no sirve para esto.
+
+**Mientras tanto**, en Gmail → Configuración → General → **Firma**, pon
+`hi@dacarma.co`. No arregla el remitente, pero deja clara tu dirección buena.
+
+---
+
+# Orden recomendado
+
+| Cuándo | Qué | Tiempo |
+|---|---|---|
+| Hoy | Parte 1 — recibir en `hi@dacarma.co` | 10 min |
+| Hoy | Parte 2 — Resend, para que el formulario funcione | 20 min |
+| Esta semana | Parte 3 — DMARC | 5 min |
+| Cuando llegue correo real | Parte 4 — buzón para responder | — |
+
+Cuando termines la Parte 1 y la 2, avísame: verifico el DNS y el formulario, y
+actualizo `hi@dacarma.co` en los dos CV (regenerando los PDF) y en el «Acerca
+de» de LinkedIn.
