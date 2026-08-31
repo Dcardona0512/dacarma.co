@@ -64,16 +64,16 @@ export async function POST(request: Request) {
   const to = process.env.CONTACT_TO_EMAIL;
   const from = process.env.CONTACT_FROM_EMAIL;
 
-  // Name the missing ones. "Something is unset" costs a redeploy per guess.
-  const missing = Object.entries({
-    RESEND_API_KEY: apiKey,
-    CONTACT_TO_EMAIL: to,
-    CONTACT_FROM_EMAIL: from,
-  })
-    .filter(([, value]) => !value)
-    .map(([name]) => name);
+  if (!apiKey || !to || !from) {
+    // Name them. "Something is unset" costs a redeploy per guess.
+    const missing = Object.entries({
+      RESEND_API_KEY: apiKey,
+      CONTACT_TO_EMAIL: to,
+      CONTACT_FROM_EMAIL: from,
+    })
+      .filter(([, value]) => !value)
+      .map(([name]) => name);
 
-  if (missing.length) {
     console.error(
       `Contact form is not configured. Missing in this environment: ${missing.join(", ")}.`,
     );
