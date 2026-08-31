@@ -48,7 +48,7 @@ export const site = {
       { text: "React", accent: true },
     ] satisfies HeadingSegment[],
     body: "Hey, I'm David Cardona Martínez, Commercial Pilot & Full-Stack Software Developer. A Colombian doing what I love.",
-    cta: { label: "Get In Touch", href: "/contact" },
+    cta: { label: "Get In Touch", href: "mailto:hi@dacarma.co" },
     portrait: "/images/hero-portrait.png",
     socials: [
       {
@@ -99,13 +99,13 @@ export const site = {
     {
       title: "Available",
       description: "Currently available for new projects. Let's talk.",
-      href: "/contact",
+      href: "mailto:hi@dacarma.co",
       placeholder: true,
     },
     {
       title: "Available",
       description: "Currently available for new projects. Let's talk.",
-      href: "/contact",
+      href: "mailto:hi@dacarma.co",
       placeholder: true,
     },
   ] satisfies Project[],
@@ -118,7 +118,7 @@ export const site = {
     lead: "Let's build something great",
     priceBadge: "Starting from $800",
     body: "Always open to connecting with new people — sharing ideas, discussing projects, and exploring potential collaborations.",
-    cta: { label: "Get In Touch", href: "/contact" },
+    cta: { label: "Get In Touch", href: "mailto:hi@dacarma.co" },
     visual: "/images/services-visual.png",
   },
 
@@ -143,14 +143,4 @@ export const site = {
     credit: "Created by David Cardona Martínez",
   },
 
-  contact: {
-    heading: "Let's have a chat!",
-    body: "Enter your details below and I'll get back to you as soon as possible.",
-    visual: "/images/services-visual.png",
-    submitLabel: "Submit",
-    successMessage:
-      "Thanks — your message is on its way. I'll be in touch soon.",
-    errorMessage:
-      "Something went wrong. Please try again, or email me directly.",
-  },
 } as const;

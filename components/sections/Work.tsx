@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/content/site";
 import { ArrowUpRightIcon } from "@/components/icons";
@@ -59,12 +58,13 @@ function ProjectCard({ project }: { project: Project }) {
     </>
   );
 
-  // Open slots point at the contact page, so an empty card still does work.
+  // Open slots open a mail draft, so an empty card still does work. Plain
+  // anchor, not Link — the router has no business with a mailto:.
   if (project.placeholder) {
     return (
-      <Link href={project.href} className={CARD}>
+      <a href={project.href} className={CARD}>
         {inner}
-      </Link>
+      </a>
     );
   }
 

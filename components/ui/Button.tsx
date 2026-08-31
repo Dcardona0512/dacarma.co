@@ -24,6 +24,9 @@ export function ButtonLink({
   icon = true,
   className = "",
 }: ButtonLinkProps) {
+  // mailto: has to be a plain anchor — routing it through Link would have the
+  // router try to navigate to it.
+  const isMail = href.startsWith("mailto:");
   const isExternal = href.startsWith("http");
   const content = (
     <>
@@ -34,6 +37,14 @@ export function ButtonLink({
     </>
   );
   const classes = `${BASE} ${fullWidth ? "w-full" : ""} ${className}`;
+
+  if (isMail) {
+    return (
+      <a href={href} className={classes}>
+        {content}
+      </a>
+    );
+  }
 
   if (isExternal) {
     return (
