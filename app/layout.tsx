@@ -30,13 +30,20 @@ export const metadata: Metadata = {
     template: `%s — ${site.profile.name}`,
   },
   description: site.description,
-  icons: { icon: "/images/favicon-source.png" },
+  // The icon and share image come from app/icon.png and
+  // app/opengraph-image.png — Next wires the tags from the filenames, so
+  // there is no `icons` or `openGraph.images` to keep in sync here.
   openGraph: {
     title: `${site.profile.name} — ${site.profile.role}`,
     description: site.description,
     url: site.url,
     siteName: site.profile.name,
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.profile.name} — ${site.profile.role}`,
+    description: site.description,
   },
 };
 
