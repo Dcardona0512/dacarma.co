@@ -182,26 +182,68 @@ SPF de *Soft fail* a *Pass*.
 
 ---
 
-# Parte 4 · Responder desde hi@dacarma.co
+# Parte 4 · Responder desde hi@dacarma.co (gratis)
 
-El detalle que casi nadie prevé:
+Email Routing **solo recibe**. Sin este paso, un reclutador escribe a
+`hi@dacarma.co`, tú respondes, y el correo sale desde
+`dcardona0512@gmail.com`.
 
-> Email Routing **solo recibe**. Si un reclutador escribe a `hi@dacarma.co` y
-> respondes, el correo sale desde `dcardona0512@gmail.com`.
+Gmail tiene *Enviar como*, pero exige un **SMTP del dominio**. La buena noticia:
+**Resend da SMTP**, y ya lo vas a tener montado por la Parte 2. Así que esto
+sale gratis y sin servicios nuevos.
 
-Para un CV eso resta. Gmail tiene *Enviar como*, pero exige **SMTP del
-dominio**, y ni Cloudflare ni el reenvío lo dan.
+> **Requisito:** el dominio tiene que estar **verificado en Resend** (Parte 2).
+> Si no, Gmail rechaza la conexión.
 
-| Opción | Coste | Qué resuelve |
-|---|---|---|
-| Solo Email Routing | Gratis | Recibes; respondes desde Gmail |
-| **Zoho Mail Lite** | ~1 USD/mes | Buzón real con IMAP/SMTP; se integra en Gmail |
-| Google Workspace | ~7 USD/mes | Todo nativo en Gmail |
+### 4.1 Crear una API key para Gmail
 
-> El plan **gratuito** de Zoho ya no trae IMAP/SMTP, así que no sirve para esto.
+En Resend → **API Keys** → *Create*. Ponle un nombre que la distinga, tipo
+`gmail-send-as`, con permiso de envío. Tenerla separada de la del formulario
+permite revocar una sin tumbar la otra.
 
-**Mientras tanto**, en Gmail → Configuración → General → **Firma**, pon
-`hi@dacarma.co`. No arregla el remitente, pero deja clara tu dirección buena.
+### 4.2 Añadir la dirección en Gmail
+
+Gmail → **Configuración** (⚙) → **Ver toda la configuración** → pestaña
+**Cuentas e importación** → *Enviar como* → **Añadir otra dirección**.
+
+1. Nombre: `David Cardona Martínez` · Dirección: `hi@dacarma.co`
+2. **Desmarca** «Tratar como un alias».
+3. Siguiente, y rellena el SMTP:
+
+   | Campo | Valor |
+   |---|---|
+   | Servidor SMTP | `smtp.resend.com` |
+   | Puerto | `587` |
+   | Nombre de usuario | `resend` |
+   | Contraseña | tu API key de Resend (la del paso 4.1) |
+   | Conexión | **TLS** |
+
+   > El usuario es literalmente la palabra `resend`, no tu correo.
+
+4. Gmail manda un código de confirmación a `hi@dacarma.co`. Como Email Routing
+   ya reenvía a tu Gmail, **te llega a tu propia bandeja**. Pégalo y listo.
+
+### 4.3 Ponerla por defecto
+
+En la misma pantalla, junto a `hi@dacarma.co`, pulsa **Predeterminada**. Y más
+abajo marca **«Responder desde la misma dirección a la que se envió»**, para que
+las respuestas salgan solas desde la dirección correcta.
+
+### ✅ Comprobación 4
+
+Escribe desde Gmail a otra cuenta tuya eligiendo `hi@dacarma.co` como remitente.
+Debe llegar **como `hi@dacarma.co`**, sin el «vía» ni «en nombre de» que aparece
+cuando el SPF no cuadra.
+
+---
+
+### Si algún día no basta
+
+Resend gratis da 3.000 correos al mes y 100 al día — de sobra para
+correspondencia personal. Está pensado para correo de producto, así que si un
+día tu correo diario crece de verdad, lo limpio es un buzón propio:
+**Zoho Mail Lite** (~1 USD/mes) o **Google Workspace** (~7 USD/mes). Para lo que
+necesitas ahora, no hace falta.
 
 ---
 
@@ -212,7 +254,7 @@ dominio**, y ni Cloudflare ni el reenvío lo dan.
 | Hoy | Parte 1 — recibir en `hi@dacarma.co` | 10 min |
 | Hoy | Parte 2 — Resend, para que el formulario funcione | 20 min |
 | Esta semana | Parte 3 — DMARC | 5 min |
-| Cuando llegue correo real | Parte 4 — buzón para responder | — |
+| Hoy, tras la Parte 2 | Parte 4 — responder desde hi@dacarma.co | 10 min |
 
 Cuando termines la Parte 1 y la 2, avísame: verifico el DNS y el formulario, y
 actualizo `hi@dacarma.co` en los dos CV (regenerando los PDF) y en el «Acerca
