@@ -22,8 +22,13 @@ manejas el dominio, y sin límite de alias.
 
 ## Paso 1 — Activar Email Routing (gratis)
 
-1. Cloudflare → selecciona **dacarma.co** → menú lateral **Email** →
-   **Email Routing**.
+1. Cloudflare → **Compute → Email Service → Email Routing**, y ahí eliges
+   **dacarma.co**.
+
+   > Ojo: **no** está en el menú **Email** de la zona. Ese solo tiene DMARC
+   > Management y Email Security. Cloudflare movió Email Routing al nivel de
+   > cuenta, bajo Compute.
+
 2. **Get started / Enable.**
 3. Cloudflare te va a avisar de que **reemplaza los registros MX existentes**.
    Acepta: los de Namecheap no sirven de nada. Añade los suyos:
