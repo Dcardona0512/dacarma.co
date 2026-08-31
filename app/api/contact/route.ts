@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { countries } from "@/content/countries";
 
 export const runtime = "nodejs";
 
@@ -8,6 +9,9 @@ type Payload = {
   lastName?: string;
   email?: string;
   company?: string;
+  /** ISO code of the chosen country, resolved to a dialling code server-side. */
+  dialCode?: string;
+  phone?: string;
   message?: string;
   /** Honeypot — always empty for real people. */
   _gotcha?: string;
@@ -39,6 +43,12 @@ export async function POST(request: Request) {
   const email = body.email?.trim() ?? "";
   const message = body.message?.trim() ?? "";
   const company = body.company?.trim() ?? "";
+
+  // Resolve the country code against the real list rather than trusting the
+  // client, so a tampered payload can't inject text into the email.
+  const rawPhone = body.phone?.trim() ?? "";
+  const country = countries.find((c) => c.code === body.dialCode);
+  const phone = rawPhone ? `${country?.dial ?? ""} ${rawPhone}`.trim() : "";
 
   if (!firstName || !lastName || !email || !message) {
     return NextResponse.json(
@@ -94,6 +104,7 @@ export async function POST(request: Request) {
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       ${company ? `<p><strong>Company:</strong> ${escapeHtml(company)}</p>` : ""}
+      ${phone ? `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` : ""}
       <p><strong>Message:</strong></p>
       <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
     `,

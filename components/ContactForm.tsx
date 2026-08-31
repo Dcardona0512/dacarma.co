@@ -2,14 +2,19 @@
 
 import { useState } from "react";
 import { site } from "@/content/site";
+import { countries, DEFAULT_COUNTRY } from "@/content/countries";
 import { ArrowRightIcon } from "@/components/icons";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-const FIELD =
-  "w-full bg-transparent text-[14px] font-medium tracking-[-0.02em] text-offwhite " +
+// Width is kept out of the base so the dial-code select can set its own —
+// two competing width utilities in one class list is a coin toss.
+const FIELD_BASE =
+  "bg-transparent text-[14px] font-medium tracking-[-0.02em] text-offwhite " +
   "placeholder:text-muted/60 border-b border-[var(--hairline)] pb-2 outline-none " +
   "transition-colors duration-200 focus:border-text";
+
+const FIELD = `w-full ${FIELD_BASE}`;
 
 const LABEL = "t-eyebrow text-text";
 
@@ -78,6 +83,35 @@ export function ContactForm() {
         <span className={LABEL}>Company name</span>
         <input name="company" placeholder="Daily Bugle" className={FIELD} />
       </label>
+
+      <div className="flex flex-col gap-2">
+        <span className={LABEL}>Phone</span>
+        <div className="flex gap-3">
+          {/* Country name rather than a flag: Windows ships no flag glyphs, so
+              emoji flags render as bare letters for a large share of visitors. */}
+          <select
+            name="dialCode"
+            defaultValue={DEFAULT_COUNTRY}
+            aria-label="Country dialling code"
+            className={`${FIELD_BASE} w-[11rem] shrink-0 [&>option]:bg-surface [&>option]:text-offwhite`}
+          >
+            {countries.map((country) => (
+              <option key={country.code} value={country.code}>
+                {country.name} ({country.dial})
+              </option>
+            ))}
+          </select>
+          <input
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="300 123 4567"
+            aria-label="Phone number"
+            className={FIELD}
+          />
+        </div>
+      </div>
 
       <label className="flex flex-col gap-2">
         <span className={LABEL}>How can I help you?</span>
