@@ -36,7 +36,7 @@ Cloudflare → **Compute → Email Service → Email Routing** → elige `dacarm
 > Atajo directo: `https://dash.cloudflare.com/<tu-cuenta>/email-service/routing`
 > — fíjate en que la ruta no lleva el dominio en medio.
 
-Pulsa **+ Onboard Domain** y elige .
+Pulsa **+ Onboard Domain** y elige `dacarma.co`.
 
 ### 1.1b Si dice «Existing non-Cloudflare MX records conflict»
 
@@ -58,13 +58,16 @@ durante el proceso, y así no hay ventana en la que existan dos.
 ### 1.2 Aceptar el cambio de MX
 
 Te avisará de que va a reemplazar los MX. **Acepta.** Los de Namecheap están
-muertos. Deja estos:
+muertos. Deben quedar los tres de Cloudflare:
 
 ```
-MX  route1.mx.cloudflare.net   prioridad 2
-MX  route2.mx.cloudflare.net   prioridad 12
-MX  route3.mx.cloudflare.net   prioridad 98
+MX  route1.mx.cloudflare.net
+MX  route2.mx.cloudflare.net
+MX  route3.mx.cloudflare.net
 ```
+
+Las prioridades las asigna Cloudflare y varían por dominio; da igual el número
+mientras sean esos tres nombres.
 
 ### 1.3 Verificar tu Gmail como destino
 
