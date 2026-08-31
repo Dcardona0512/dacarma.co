@@ -29,8 +29,12 @@ lo esperado** — en DNS los errores se acumulan y luego cuesta saber cuál fue.
 
 Cloudflare → **Compute → Email Service → Email Routing** → elige `dacarma.co`.
 
-> No está en el menú **Email** de la zona: ahí solo hay DMARC Management y
-> Email Security. Cloudflare lo movió al nivel de cuenta, bajo Compute.
+> **Compute no aparece mientras estés dentro del dominio.** Es un menú de la
+> cuenta, no de la zona. Pulsa **Back to Domains** (arriba a la izquierda) y
+> entonces sí sale en la barra lateral.
+>
+> Atajo directo: `https://dash.cloudflare.com/<tu-cuenta>/email-service/routing`
+> — fíjate en que la ruta no lleva el dominio en medio.
 
 Pulsa **Enable / Get started**.
 
